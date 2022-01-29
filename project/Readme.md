@@ -3,7 +3,7 @@
 
 ## Actions
 
-- get at least two small ec2 instances strated up in eccoe account
+- get at least two small ec2 instances created and launched/started up in eccoe account
 - create a bucket named eccoe-lidar
 - move some of sodak into the bucket
 - get conda python working as simple as possible
