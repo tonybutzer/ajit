@@ -22,7 +22,7 @@
 - find any *.pem files those are ssh key pair files
 - *.ppk files also are key pair files
 - if you use putty as your agent - know how to use puttygen and pageant to manage keys
-	- this will be used for winscp and 
+	- this will be used for winscp and fileZilla
 
 - just learned today that puttygen will read id_rsa keys made with ssh-keygen - and you can import those in pageant as well
 
@@ -43,4 +43,9 @@
 	- git can also use tokens - bothe methods have their respective adavantages/disadvantages
 
 - authentication is almost always painful and can consume brain attention units
+
+### VDI
+
+- you can use the shared h drive to store your key pair and consolidate keys between your laptop and your vdi
+	- this would prevent key sprawl - you just have to have a plan for your keypairs - or you will get to ssh key hell
 
