@@ -1,5 +1,13 @@
 # Lidar USGS South Dakota Data in the Cloud
 
+## Current Action
+
+1. Establish via terraform a butzer-eccoe-admin-box t2.small
+	- mkdir tfinfra
+	- cp joshua.picotte tf stuff here
+	- install docker for tf
+	- miniconda ?
+
 
 ## Actions
 
