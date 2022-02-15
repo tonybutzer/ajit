@@ -6,3 +6,11 @@ install:
 	mkdir /data2/$USER
 	mkdir /data2/tmpconda
 	TMPDIR=/data2/tmpconda bash /tmp/Miniconda3-latest-Linux-x86_64.sh
+
+
+docker:
+	sudo yum install docker
+	sudo usermod -aG docker ${USER}
+	sudo systemctl enable docker
+	sudo systemctl start docker
+
