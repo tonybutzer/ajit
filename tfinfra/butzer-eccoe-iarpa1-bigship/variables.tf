@@ -40,12 +40,13 @@ variable "ami" {
 
 variable "security_group_ssh" {
   description = "The AWS security group id"
-  default = "SG-SSH-Server-Internal-eccoe-dev"
+  #default = "SG-SSH-Server-Internal-eccoe-dev"
+default = "sg-0e93e5d235f5464d8"
   #default = "sg-0909310695cde5d54"
 }
 
 variable "iam_role" {
   description = "The AWS iam role"
-  default = "adfs-eccoe-developer"
+  default = "eccoe-developer-ec2-role"
 }
 
