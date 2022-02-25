@@ -4,7 +4,8 @@ down:
 
 install:
 	#mkdir /data2/$USER
-	#mkdir /data/tmpconda
+	sudo mkdir -p /data/tmpconda
+	sudo chown -R ec2-user /data
 	TMPDIR=/data/tmpconda bash /tmp/Miniconda3-latest-Linux-x86_64.sh
 
 
