@@ -1,0 +1,6 @@
+FROM node
+
+
+WORKDIR /home/node
+
+run git clone https://github.com/stac-extensions/pointcloud.git
