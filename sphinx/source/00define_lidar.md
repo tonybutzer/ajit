@@ -56,6 +56,8 @@ Most people look at me like I am crazy when I say this.
 ## Expected Audience 
 
 The LiDAR Project Team
+![](./Assets/lidar_team.png)
+
 
 ![](https://upload.wikimedia.org/wikipedia/commons/0/0e/Lidar_P1270901.jpg)
 
