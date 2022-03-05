@@ -114,6 +114,10 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LiDAR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#what-s-new">What’s New</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lastools">lastools</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#links-first-blush">Links first blush</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#formats-for-3d-pointclouds">formats for 3d pointclouds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pointcloud-to-triangles">pointcloud to triangles</a></li>
@@ -194,6 +198,87 @@
             
   <div class="section" id="lidar">
 <h1>LiDAR<a class="headerlink" href="#lidar" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>https://en.wikipedia.org/wiki/Lidar</p></li>
+</ul>
+</div>
+<div class="section" id="what-s-new">
+<h1>What’s New<a class="headerlink" href="#what-s-new" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>working on command line ways to visualize LiDAR files and objects</p>
+<ul>
+<li><p>lastools - compiling the gcc to create Linux binaries in a container</p></li>
+<li><p>lastools - with Windows <em>.exe</em> files using wine in a docker container - cool maybe</p></li>
+<li><p>lastools capabilities</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="lastools">
+<h2>lastools<a class="headerlink" href="#lastools" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>http://lastools.org/</p></li>
+<li><p>short list for now</p>
+<ul>
+<li><p>lasinfo	prints out an overview of the contents of a LAS/LAZ file</p></li>
+<li><p>laszip	powerful, lossless LiDAR compressor that turns large LAS files into much smaller LAZ files that are only 7 - 20 percent of the original file size</p></li>
+<li><p>lasboundary	computes a boundary polygon</p></li>
+</ul>
+</li>
+<li><p>full list</p>
+<ul>
+<li><p>laszip	powerful, lossless LiDAR compressor that turns large LAS files into much smaller LAZ files that are only 7 - 20 percent of the original file size</p></li>
+<li><p>lastile	creates a tiling of LAS/LAZ files</p></li>
+<li><p>lassort	z-orders LAS/LAZ files</p></li>
+<li><p>lasclip	clips away points falling into polygonal shapes (e.g. building footprints)</p></li>
+<li><p>txt2las	converts LiDAR from standard ASCII to LAS/LAZ</p></li>
+<li><p>las2txt	turns LAS/LAZ into human-readable and easy-to-parse text</p></li>
+<li><p>lasinfo	prints out an overview of the contents of a LAS/LAZ file</p></li>
+<li><p>las2shp	turns LAS/LAZ into ESRI’s Shapefile format</p></li>
+<li><p>shp2las	turns an ESRI’s Shapefile into LAS/LAZ</p></li>
+<li><p>lasmerge	can merge several LAS/LAZ files into one</p></li>
+<li><p>e572las	extracts the points from the E57 format and stores them as LAS/LAZ files</p></li>
+<li><p>las2las	filters, transforms, subsamples, clips, thins, …</p></li>
+<li><p>lasthin	implements a simple point thinning algorithm</p></li>
+<li><p>las2tin	triangulates the points of a LAS/LAZ file into a TIN</p></li>
+<li><p>las2dem	rasterizes them into a DEM</p></li>
+<li><p>las2iso	extracts, optionally simplified, elevation contours</p></li>
+<li><p>lasboundary	computes a boundary polygon</p></li>
+<li><p>demzip	compresses and uncompresses raster data to RasterLAZ format</p></li>
+<li><p>lasground	tool for bare-earth extraction</p></li>
+<li><p>lasdatum	transforms from one horizontal datum to another</p></li>
+<li><p>lasheight	computes the height of each LAS point above the ground</p></li>
+<li><p>lasclassify	classifies buildings and high vegetation (i.e. trees)</p></li>
+<li><p>lascanopy	computes popular forestry metrics and grids them onto a raster</p></li>
+<li><p>lasoverlap	checks flight line overlap and/or vertical and horizontal alignment</p></li>
+<li><p>lastrack	takes files together with a trajectory file by matching GPS time stamps</p></li>
+<li><p>lascolor	colors LiDAR points based on imagery</p></li>
+<li><p>lasoptimize	optimizes data for better compression and spatial coherency</p></li>
+<li><p>lascontrol	computes the height at certain x and y control points and reports the difference</p></li>
+<li><p>lasgrid	grids data onto a raster</p></li>
+<li><p>lascopy	copies attributes using the GPS-time stamp and the return number</p></li>
+<li><p>lasvoxel	computes a voxelization of points</p></li>
+<li><p>lasdistance	classifies, flags, or removes points based on distance from polygonal segments</p></li>
+<li><p>lasoverage	finds the “overage” of a airborne collect that get covered by multiple flightline</p></li>
+<li><p>lasvalidate	determine if LAS files are conform to the ASPRS LAS specifications</p></li>
+<li><p>lasindex	creates a *.lax file for a given *.las or *.laz file that contains spatial indexing information</p></li>
+<li><p>lasnoise	flags or removes noise points in LAS/LAZ/BIN/ASCII files</p></li>
+<li><p>lasduplicate	removes all duplicate points from a LAS/LAZ/ASCII file</p></li>
+<li><p>lassplit	splits the input file(s) into several output files based on various parameters</p></li>
+<li><p>lasreturn	reports geometric return statistics and repairs ‘number of returns’ field based on GPS times</p></li>
+<li><p>lasprecision	reads LIDAR data in the LAS format and computes statistics about precision “advertised” in the header</p></li>
+<li><p>laspublish	do 3D visualization of LiDAR data in a web browser using the WebGL Potree</p></li>
+<li><p>lasview	visualizes the contents of a LAS/LAZ file and can also compute a TIN</p></li>
+<li><p>blast2dem	process billion of LIDAR points from the LAS/LAZ format, triangulates them a seamless TIN, and rasters the TIN onto a DEM that can optionally be tiled</p></li>
+<li><p>blast2iso	process billion of LIDAR points from the LAS/LAZ format, triangulates them a seamless (!) TIN, and extracts contours at the specified elevations from the TIN</p></li>
+<li><p>and even more…	see the full product overview</p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="links-first-blush">
 <h1>Links first blush<a class="headerlink" href="#links-first-blush" title="Permalink to this headline">¶</a></h1>
@@ -252,7 +337,7 @@
 <div class="section" id="hoop-3d-cad">
 <h2>hoop 3d cad<a class="headerlink" href="#hoop-3d-cad" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>https://forum.techsoft3d.com/</p></li>
+<li><p>https://demo.techsoft3d.com/</p></li>
 <li><p>https://github.com/isl-org/Open3D/issues/537</p></li>
 <li><p>https://github.com/isl-org/Open3D/issues/376</p></li>
 <li><p>http://www.open3d.org/docs/0.9.0/tutorial/Basic/azure_kinect.html</p></li>

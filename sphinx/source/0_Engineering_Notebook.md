@@ -1,5 +1,70 @@
 # LiDAR
 
+- https://en.wikipedia.org/wiki/Lidar
+
+# What's New
+
+- working on command line ways to visualize LiDAR files and objects
+	- lastools - compiling the gcc to create Linux binaries in a container
+	- lastools - with Windows *.exe* files using wine in a docker container - cool maybe
+	- lastools capabilities
+
+
+		- 
+### lastools
+- http://lastools.org/
+
+- short list for now
+	- lasinfo	prints out an overview of the contents of a LAS/LAZ file
+ 	- laszip	powerful, lossless LiDAR compressor that turns large LAS files into much smaller LAZ files that are only 7 - 20 percent of the original file size
+	- lasboundary	computes a boundary polygon
+
+- full list
+ 	- laszip	powerful, lossless LiDAR compressor that turns large LAS files into much smaller LAZ files that are only 7 - 20 percent of the original file size
+	- lastile	creates a tiling of LAS/LAZ files
+	- lassort	z-orders LAS/LAZ files
+	- lasclip	clips away points falling into polygonal shapes (e.g. building footprints)
+	- txt2las	converts LiDAR from standard ASCII to LAS/LAZ
+	- las2txt	turns LAS/LAZ into human-readable and easy-to-parse text
+	- lasinfo	prints out an overview of the contents of a LAS/LAZ file
+	- las2shp	turns LAS/LAZ into ESRI's Shapefile format
+	- shp2las	turns an ESRI's Shapefile into LAS/LAZ
+	- lasmerge	can merge several LAS/LAZ files into one
+	- e572las	extracts the points from the E57 format and stores them as LAS/LAZ files
+	- las2las	filters, transforms, subsamples, clips, thins, ...
+	- lasthin	implements a simple point thinning algorithm
+	- las2tin	triangulates the points of a LAS/LAZ file into a TIN
+	- las2dem	rasterizes them into a DEM
+	- las2iso	extracts, optionally simplified, elevation contours
+	- lasboundary	computes a boundary polygon
+	- demzip	compresses and uncompresses raster data to RasterLAZ format
+	- lasground	tool for bare-earth extraction
+	- lasdatum	transforms from one horizontal datum to another
+	- lasheight	computes the height of each LAS point above the ground
+	- lasclassify	classifies buildings and high vegetation (i.e. trees)
+	- lascanopy	computes popular forestry metrics and grids them onto a raster
+	- lasoverlap	checks flight line overlap and/or vertical and horizontal alignment
+	- lastrack	takes files together with a trajectory file by matching GPS time stamps
+	- lascolor	colors LiDAR points based on imagery
+	- lasoptimize	optimizes data for better compression and spatial coherency
+	- lascontrol	computes the height at certain x and y control points and reports the difference
+	- lasgrid	grids data onto a raster
+	- lascopy	copies attributes using the GPS-time stamp and the return number
+	- lasvoxel	computes a voxelization of points
+	- lasdistance	classifies, flags, or removes points based on distance from polygonal segments
+	- lasoverage	finds the "overage" of a airborne collect that get covered by multiple flightline
+	- lasvalidate	determine if LAS files are conform to the ASPRS LAS specifications
+	- lasindex	creates a *.lax file for a given *.las or *.laz file that contains spatial indexing information
+	- lasnoise	flags or removes noise points in LAS/LAZ/BIN/ASCII files
+	- lasduplicate	removes all duplicate points from a LAS/LAZ/ASCII file
+	- lassplit	splits the input file(s) into several output files based on various parameters
+	- lasreturn	reports geometric return statistics and repairs 'number of returns' field based on GPS times
+	- lasprecision	reads LIDAR data in the LAS format and computes statistics about precision "advertised" in the header
+	- laspublish	do 3D visualization of LiDAR data in a web browser using the WebGL Potree
+	- lasview	visualizes the contents of a LAS/LAZ file and can also compute a TIN
+	- blast2dem	process billion of LIDAR points from the LAS/LAZ format, triangulates them a seamless TIN, and rasters the TIN onto a DEM that can optionally be tiled
+	- blast2iso	process billion of LIDAR points from the LAS/LAZ format, triangulates them a seamless (!) TIN, and extracts contours at the specified elevations from the TIN
+	- and even more...	see the full product overview
 
 # Links first blush
 
@@ -56,7 +121,7 @@ https://github.com/widgetti/ipyvolume/blob/master/notebooks/demo-0.5.ipynb
 
 ### hoop 3d cad
 
-- https://forum.techsoft3d.com/
+- https://demo.techsoft3d.com/
 
 - https://github.com/isl-org/Open3D/issues/537
 
