@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week 18 HLS from S3 Aaron Friesz &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Week 18 HLS from S3 Aaron Friesz</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/18week.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-18-hls-from-s3-aaron-friesz">
+<h1>Week 18 HLS from S3 Aaron Friesz<a class="headerlink" href="#week-18-hls-from-s3-aaron-friesz" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="science-without-the-suffering">
+<h2>Science without the suffering<a class="headerlink" href="#science-without-the-suffering" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="data-without-the-dukkha">
+<h2>Data without the dukkha<a class="headerlink" href="#data-without-the-dukkha" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="manifestations-without-the-maya">
+<h2>Manifestations without the maya<a class="headerlink" href="#manifestations-without-the-maya" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="aaron-friesz">
+<h2>Aaron Friesz<a class="headerlink" href="#aaron-friesz" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">LP</span> <span class="n">DAAC</span>
+<span class="o">-</span> <span class="n">Works</span> <span class="k">with</span> <span class="n">the</span> <span class="n">USGS</span> <span class="ow">and</span> <span class="n">NASA</span>
+<span class="o">-</span> <span class="n">Develops</span> <span class="n">Science</span> <span class="n">Outreach</span> <span class="n">Programs</span>
+<span class="o">-</span> <span class="n">Cole</span> <span class="n">K</span><span class="o">.</span> <span class="ow">is</span> <span class="n">one</span> <span class="n">of</span> <span class="n">his</span> <span class="n">colleagues</span> <span class="ow">in</span> <span class="n">crime</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="future-classes">
+<h2>Future Classes<a class="headerlink" href="#future-classes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">May</span> <span class="mi">4</span><span class="n">th</span> <span class="o">--</span> <span class="n">Fire</span> <span class="n">applications</span> <span class="n">made</span> <span class="n">easy</span> <span class="n">by</span> <span class="n">Pangeo</span> <span class="ow">in</span> <span class="n">AWS</span> <span class="o">--</span> <span class="n">tony</span>
+<span class="o">-</span> <span class="n">May</span> <span class="mi">11</span><span class="n">th</span> <span class="o">--</span> <span class="n">musings</span> <span class="ow">in</span> <span class="n">change</span> <span class="n">detection</span> <span class="n">notebooks</span> <span class="n">Kelcy</span> <span class="n">Smith</span>
+<span class="o">-</span> <span class="n">May</span> <span class="mi">17</span><span class="n">th</span> <span class="o">-</span> <span class="n">Erica</span> <span class="n">Degaga</span> <span class="o">-</span> <span class="n">How</span> <span class="n">we</span> <span class="n">approach</span> <span class="n">Explainable</span> <span class="n">AI</span> <span class="o">-</span> <span class="n">XAI</span>
+    <span class="o">-</span> <span class="n">Tensorflow</span><span class="p">,</span> <span class="n">Sagemaker</span><span class="p">,</span> <span class="n">Tools</span> <span class="ow">and</span> <span class="n">Techniques</span> <span class="o">-</span> <span class="n">Tesnsorflow</span> <span class="n">demo</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">bigPangeo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hackathon-problem-solving">
+<h2>Hackathon, Problem Solving<a class="headerlink" href="#hackathon-problem-solving" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">Some</span> <span class="n">Examples</span> <span class="p">:</span>
+<span class="o">-</span> <span class="n">Update</span> <span class="kn">from</span> <span class="nn">Devandra</span>
+    <span class="o">-</span> <span class="n">UTM</span> <span class="n">to</span> <span class="n">Albers</span> <span class="n">to</span> <span class="n">Merging</span> <span class="n">of</span> <span class="n">cross</span> <span class="n">zone</span> <span class="n">tiles</span> <span class="o">-</span> <span class="n">Sujan</span>
+<span class="o">-</span> <span class="n">Dealing</span> <span class="k">with</span> <span class="n">HDF4</span> <span class="n">until</span> <span class="n">there</span> <span class="n">are</span> <span class="n">COGs</span>
+<span class="o">-</span> <span class="n">Zonal</span> <span class="n">stats</span> <span class="o">-</span> <span class="n">be</span> <span class="n">careful</span> <span class="k">with</span> <span class="n">some</span> <span class="n">of</span> <span class="n">the</span> <span class="n">libraries</span> <span class="o">-</span> <span class="n">to</span> <span class="n">be</span> <span class="n">continued</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cogs-good-says-og-the-caveman">
+<h2>“COGs good!” - says OG (the caveman).<a class="headerlink" href="#cogs-good-says-og-the-caveman" title="Permalink to this headline">¶</a></h2>
+<p><img alt="https://kokoalberti.com/articles/geotiff-compression-optimization-guide/tiled_vs_stripped.png" src="https://kokoalberti.com/articles/geotiff-compression-optimization-guide/tiled_vs_stripped.png" /></p>
+</div>
+<div class="section" id="campfire-anyone">
+<h2>Campfire Anyone?<a class="headerlink" href="#campfire-anyone" title="Permalink to this headline">¶</a></h2>
+<p><img alt="https://www.inforum.com/incoming/6976312-fkwbls-47-badlands-images.jpeg/alternates/BASE_FREE/47%20badlands%20images.jpeg" src="https://www.inforum.com/incoming/6976312-fkwbls-47-badlands-images.jpeg/alternates/BASE_FREE/47%20badlands%20images.jpeg" /></p>
+<div class="section" id="past-pangeo-videos-here">
+<h3>Past Pangeo Videos Here<a class="headerlink" href="#past-pangeo-videos-here" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>K:\90daytemp\butzer\AWS_PANGEO_VIDEOS</p></li>
+</ul>
+</div>
+<div class="section" id="in-other-news-don-t-get-your-nads-mixed-up">
+<h3>In other news - don’t get your NADs mixed up<a class="headerlink" href="#in-other-news-don-t-get-your-nads-mixed-up" title="Permalink to this headline">¶</a></h3>
+<p>Subject: REGISTER for 2021 Geospatial Summit, NGS/NOAA - May 4-5 - status for replacement of NAD 83 &amp; NAVD 88 in 2022</p>
+<p>To all –</p>
+<p>The National Geodetic Survey/NOAA plans to replace the North American Datum of 1983 (NAD 83) and the North American Vertical Datum of 1988 (NAVD 88) as part of modernizing the National Spatial Reference System (NSRS).</p>
+<p>The purpose of the Geospatial Summit is to learn about the status and schedule for replacement of NAD 83 and NAVD 88, and the impact the transition to the modernized NSRS will have on USGS georeferenced products.</p>
+<p>Below is a link to a draft agenda and to documents for background information.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Infrastructure DevOps Cookbook &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Infrastructure DevOps Cookbook</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/27DEVOPS.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="infrastructure-devops-cookbook">
+<h1>Infrastructure DevOps Cookbook<a class="headerlink" href="#infrastructure-devops-cookbook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="devops-details">
+<h2>DEVOPS details<a class="headerlink" href="#devops-details" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>you don’t have to be a cloud devops engineer - just have one on your team</p>
+<ul>
+<li><p>or phone a friend - tony butzer</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="devops-weekly">
+<h2>DEVOPS WEEKLY<a class="headerlink" href="#devops-weekly" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Class number 1</p>
+<ul>
+<li><p>create mini-pangeo</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="create-mini-pangeo">
+<h2>Create Mini-Pangeo<a class="headerlink" href="#create-mini-pangeo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>add devops/tfinfra to git repo harmony <code class="docutils literal notranslate"><span class="pre">done</span></code></p></li>
+<li><p>terraform apply butzer-neal-mini-pangeo – from github harmont devops tfinfra <code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">test</span></code></p></li>
+<li><p>create another-one  butzer-neal-mini-pangeo-demo-only-nuke-me <code class="docutils literal notranslate"><span class="pre">skip</span></code></p></li>
+<li><p>tljh install – the littleist jupyter hub := mini-pangeo</p></li>
+<li><p>create users plus harmony user from notebook <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">in</span> <span class="pre">class</span></code></p>
+<ul>
+<li><p>http://10.12.69.216:8080/notebooks/jovyan/06-Instructor/01-Students.ipynb</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="tljh-install">
+<h3>tljh install<a class="headerlink" href="#tljh-install" title="Permalink to this headline">¶</a></h3>
+<p>cd /opt/et/pkg/tljh</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">services</span>
+
+<span class="n">make</span> <span class="nb">all</span>
+</pre></div>
+</div>
+<p>sign in hub as ubuntu</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">files</span>
+
+    <span class="n">make</span> <span class="n">et</span><span class="o">-</span><span class="n">depends</span>
+
+<span class="n">then</span> <span class="n">add</span> <span class="n">users</span> <span class="kn">from</span> <span class="nn">users.txt</span> <span class="ow">in</span> <span class="n">pkg</span><span class="o">/</span><span class="n">tljh</span>
+
+<span class="nb">set</span> <span class="n">user</span> <span class="n">passsword</span> <span class="p">(</span><span class="n">this</span> <span class="n">project</span> <span class="n">rocks</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="techno-babble">
+<h4>techno-babble<a class="headerlink" href="#techno-babble" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ubuntu@gahub1:/opt/et/pkg/tljh$ more bootstrapTheHub.sh
+#! /bin/bash
+
+curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py \
+  | sudo python3 - \
+    --admin ubuntu
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="docker-and-docker-logs">
+<h2>docker and docker logs<a class="headerlink" href="#docker-and-docker-logs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>see github repo</p>
+<ul>
+<li><p>https://github.com/tonybutzer/etops/tree/master/grid_veget_c</p></li>
+</ul>
+</li>
+<li><p>look at Dockerfile</p></li>
+<li><p>look at gridmeister.py</p></li>
+<li><p>look at *.sh</p></li>
+<li><p>bash cmd_…</p></li>
+</ul>
+</div>
+<div class="section" id="chs-and-chs-processes">
+<h2>CHS and CHS Processes<a class="headerlink" href="#chs-and-chs-processes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="process-recap-of-requestor-pays">
+<h3>Process recap of requestor pays<a class="headerlink" href="#process-recap-of-requestor-pays" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>bucket = dev-et-data</p></li>
+<li><p>chat = rich signell and sam congden</p></li>
+<li><p>fyi chs customer user group</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chs-processes">
+<h2>CHS Processes<a class="headerlink" href="#chs-processes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-board-cab">
+<h3>The Board CAB<a class="headerlink" href="#the-board-cab" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="cab-request-process">
+<h3>CAB Request Process<a class="headerlink" href="#cab-request-process" title="Permalink to this headline">¶</a></h3>
+<p>https://support.chs.usgs.gov/display/CHSKB/CAB+-+Custom+Infrastructure+Request</p>
+<div class="section" id="synopsys">
+<h4>Synopsys<a class="headerlink" href="#synopsys" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>RFC - request for change</p>
+<ul>
+<li><p>developers do not have root permissions</p></li>
+<li><p>so they request admins to change AWS on their behalf</p></li>
+<li><p>CHS use CloudFormation Templates (CFTs)</p></li>
+</ul>
+</li>
+<li><p>Step by Step Guide</p>
+<ul>
+<li><p>our account = LSDS - our EC2 Role = lsds-developer-ec2 # IAM Role</p></li>
+<li><p>create a new branch for your cft change - more info needed</p></li>
+<li><p>make changes and sumbit a commit</p></li>
+<li><p>push branch to repository</p></li>
+<li><p>create a merge request</p></li>
+<li><p>include brief description</p></li>
+<li><p>create a change request</p>
+<ul>
+<li><p>https://taskmgr.chs.usgs.gov/servicedesk/customer/portal/9</p></li>
+<li><p>submit AN rfc HERE</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Resources</p>
+<ul>
+<li><p>https://code.chs.usgs.gov/chs-library</p></li>
+</ul>
+</li>
+<li><p>Review process</p>
+<ul>
+<li><p>in by friday - reviewed by the next Tuesday</p></li>
+<li><p>notification of completed RFCs</p></li>
+<li><p>Classes</p>
+<ul>
+<li><p>Standard</p></li>
+<li><p>Normal</p>
+<ul>
+<li><p>changes security posture</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CHS Operations completes Change</p></li>
+<li><p>Customer/user validates the operation works</p></li>
+<li><p>Closed</p></li>
+<li><p>modifications use a CRQ-# - what?</p></li>
+<li><p>logged, documented and reviewed by all developer groups.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="chs-example-lsds-s3-dev-et-data">
+<h3>CHS Example lsds-s3-dev-et-data<a class="headerlink" href="#chs-example-lsds-s3-dev-et-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="commit">
+<h4>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h4>
+<p>https://code.chs.usgs.gov/CHS-Custom-Infrastructure/LSDSDPAS/LSDSDPAS/-/commit/981fe8bdf093fd6345bf0ad0854867a311a11eb4</p>
+</div>
+<div class="section" id="gitlab-repo">
+<h4>gitlab repo<a class="headerlink" href="#gitlab-repo" title="Permalink to this headline">¶</a></h4>
+<p>https://code.chs.usgs.gov/CHS-Custom-Infrastructure/LSDSDPAS/LSDSDPAS/-/tree/development</p>
+</div>
+<div class="section" id="cft">
+<h4>CFT<a class="headerlink" href="#cft" title="Permalink to this headline">¶</a></h4>
+<p>https://code.chs.usgs.gov/CHS-Custom-Infrastructure/LSDSDPAS/LSDSDPAS/-/blob/development/S3/Templates/lsds-s3-dev-et-data.yml</p>
+</div>
+</div>
+<div class="section" id="pangeo-process">
+<h3>Pangeo Process<a class="headerlink" href="#pangeo-process" title="Permalink to this headline">¶</a></h3>
+<p>https://code.chs.usgs.gov/usgs-chs/CHS-IaC/baseline/managed-services/pangeo/pangeo-image/-/blob/master/pangeo-notebook/packages.txt</p>
+<div class="section" id="need-to-understand-the-gitlab-structure">
+<h4>Need to understand the gitlab structure<a class="headerlink" href="#need-to-understand-the-gitlab-structure" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>code.chs.usgs.gov</p>
+<ul>
+<li><p>usge-chs</p></li>
+<li><p>CHS-IaC baseline</p>
+<ul>
+<li><p>managed-services/pangeo</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="special-iam-users">
+<h3>Special IAM Users<a class="headerlink" href="#special-iam-users" title="Permalink to this headline">¶</a></h3>
+<p>An AWS Identity and Access Management (IAM) user is an entity that you create in AWS to represent the person or application that uses it to interact with AWS. A user in AWS consists of a name and credentials. An IAM user with administrator permissions is not the same thing as the AWS account root user.</p>
+</div>
+</div>
+<div class="section" id="bucket">
+<h2>bucket<a class="headerlink" href="#bucket" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bucket-data-moving">
+<h3>bucket data moving<a class="headerlink" href="#bucket-data-moving" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="getting-data-from-dev-et-data-to-the-netapp">
+<h3>getting data from dev-et-data to the netapp<a class="headerlink" href="#getting-data-from-dev-et-data-to-the-netapp" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>powershell</p>
+<ul>
+<li><p>net use</p></li>
+<li><p>net use w: \igskmncnfs016\watersmartfs1</p></li>
+</ul>
+</li>
+<li><p>mkdir</p>
+<ul>
+<li><p>mkdir w:/Projects/Cloud_Veg_ET/fromtony/tiles/tile40N-90E_chip40N-82E</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="using-filezilla">
+<h4>Using FileZilla<a class="headerlink" href="#using-filezilla" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="using-pycharm">
+<h4>Using Pycharm<a class="headerlink" href="#using-pycharm" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Prerequisite</p>
+<ul>
+<li><p>Mount S3 as /opt/et_data</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="mounting-s3">
+<h3>Mounting S3<a class="headerlink" href="#mounting-s3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>s3fs.sh</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+<span class="n">REGION</span><span class="o">=</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mi">2</span>
+
+<span class="n">sudo</span> <span class="n">s3fs</span> <span class="o">-</span><span class="n">o</span> <span class="n">allow_other</span> <span class="o">-</span><span class="n">o</span> <span class="n">iam_role</span><span class="o">=</span><span class="s2">&quot;lsds-developer-ec2&quot;</span> \
+<span class="o">-</span><span class="n">o</span> <span class="n">use_cache</span><span class="o">=/</span><span class="n">tmp</span> \
+<span class="o">-</span><span class="n">o</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://s3-$REGION.amazonaws.com&quot;</span> \
+<span class="o">-</span><span class="n">o</span> <span class="n">umask</span><span class="o">=</span><span class="mi">0227</span><span class="p">,</span><span class="n">uid</span><span class="o">=</span><span class="mi">1000</span> \
+<span class="o">-</span><span class="n">o</span> <span class="n">nonempty</span>     \
+        <span class="n">dev</span><span class="o">-</span><span class="n">et</span><span class="o">-</span><span class="n">data</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">et_data</span>
+
+<span class="c1"># some debug options</span>
+<span class="c1"># -o dbglevel=info -f \</span>
+<span class="c1"># -o curldbg \</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pycharm-code-for-ssh-and-for-sftp">
+<h3>Pycharm Code for ssh and for sftp<a class="headerlink" href="#pycharm-code-for-ssh-and-for-sftp" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>import fsspec</p></li>
+<li><p>import paramiko</p></li>
+</ul>
+<div class="section" id="code-example-select-file-pattern-download">
+<h4>Code example select file pattern download<a class="headerlink" href="#code-example-select-file-pattern-download" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Pycharm on windows with modules installed</p>
+<ul>
+<li><p>tip install without the VPN</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fsspec</span>
+<span class="kn">import</span> <span class="nn">paramiko</span>
+
+<span class="n">ip</span><span class="o">=</span><span class="s1">&#39;10.12.69.21&#39;</span>
+<span class="n">port</span><span class="o">=</span><span class="mi">22</span>
+<span class="n">username</span><span class="o">=</span><span class="s1">&#39;ubuntu&#39;</span>
+<span class="n">password</span><span class="o">=</span><span class="s1">&#39;etrocks&#39;</span>
+
+<span class="n">dst</span> <span class="o">=</span> <span class="s1">&#39;w:/Projects/Cloud_Veg_ET/fromtony/tiles/tile40N-90E_chip40N-82E/&#39;</span>
+
+<span class="n">src</span> <span class="o">=</span> <span class="s1">&#39;dev-et-data/tiles/tile40N-90E_chip40N-82E/&#39;</span>
+
+<span class="n">fs_src</span> <span class="o">=</span> <span class="s1">&#39;/opt/et_data/tiles/tile40N-90E_chip40N-82E/&#39;</span>
+
+<span class="n">cmd</span><span class="o">=</span><span class="s1">&#39;aws s3 ls &#39;</span> <span class="o">+</span> <span class="n">src</span>
+
+<span class="n">ssh</span><span class="o">=</span><span class="n">paramiko</span><span class="o">.</span><span class="n">SSHClient</span><span class="p">()</span>
+<span class="n">ssh</span><span class="o">.</span><span class="n">set_missing_host_key_policy</span><span class="p">(</span><span class="n">paramiko</span><span class="o">.</span><span class="n">AutoAddPolicy</span><span class="p">())</span>
+<span class="n">ssh</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
+
+<span class="n">stdin</span><span class="p">,</span><span class="n">stdout</span><span class="p">,</span><span class="n">stderr</span><span class="o">=</span><span class="n">ssh</span><span class="o">.</span><span class="n">exec_command</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<span class="n">outlines</span><span class="o">=</span><span class="n">stdout</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">outlines</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">outlines</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;this many lines in a steffi dir&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">outlines</span><span class="p">))</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">&#39;sftp&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">ip</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+<span class="c1">#mylist = fs.ls(fs_src)</span>
+<span class="c1">#print(mylist)</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="n">outlines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">from_file</span> <span class="o">=</span> <span class="n">fs_src</span> <span class="o">+</span> <span class="n">file</span>
+<span class="n">to_file</span> <span class="o">=</span> <span class="n">dst</span> <span class="o">+</span> <span class="n">file</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">from_file</span><span class="p">,</span> <span class="n">to_file</span><span class="p">)</span>
+<span class="c1">#fs.get(from_file, to_file)</span>
+
+<span class="n">my_dd_list</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">outlines</span><span class="p">)):</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">outlines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;etasw_&#39;</span><span class="p">):</span>
+        <span class="n">my_dd_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dd num of files is &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_dd_list</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">my_dd_list</span><span class="p">:</span>
+    <span class="n">from_file</span> <span class="o">=</span> <span class="n">fs_src</span> <span class="o">+</span> <span class="n">file</span>
+    <span class="n">to_file</span> <span class="o">=</span> <span class="n">dst</span> <span class="o">+</span> <span class="n">file</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">from_file</span><span class="p">,</span> <span class="n">to_file</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">from_file</span><span class="p">,</span> <span class="n">to_file</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;file </span><span class="si">{}</span><span class="s1"> took </span><span class="si">{}</span><span class="s1"> seconds - TOO LONG!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -2,8 +2,27 @@
 <u>DRAFT</u>
 `DRAFT`
 
-# AWS Onboarding Overview
+# [miniPangeo BUTTON](http://10.12.69.233)
 
+# AWS On-boarding Overview
+
+## Executive Summary
+
+#### You really should be using the cloud.
+- I can help you with all the details.
+- Let's get started!
+
+> Offer available for a limited time only. 
+
+### Deliverables
+- A self directed jupyter/python center of excellence
+- A set of poorly written Cookbooks for doing science
+- A repository of very useful jupyter notebooks and libraries
+- A refined, SMALL, list of winning technologies that accelerate science and cool decision fatigue fever.
+- A cloud Sherpa informal help-desk.
+- An instance of end-to-end science in the cloud - COGs in --> COGs out
+- A model recipe, "HowTo/TL;DR" path for moving to the cloud - likely rapidly.
+- A "Frontline" like docuseries on "Behind the Enemy Lines of a Covert DevOps Expert"
 
 ## Introduction
 
@@ -14,12 +33,12 @@
 > There are many tertiary goals for this project hinted at in the pages of this document/web-page.
 
 This document is organized as follows:
-1. AWS Onboarding Overview
+1. AWS On-boarding Overview
 2. [Class Syllabus](http://10.12.69.216/00weekbyweek.html?highlight=class%20syllabus)
-3. [Infrastructure DevOps Cookbook](http://10.12.69.216/27DEVOPS.html?highlight=infrastructure%20devops%20cookbook)
-4. Data Science CookBook
+3. [Infrastructure DevOps Cookbook](http://184.83.30.149:57778/27DEVOPS.html?highlight=infrastructure%20devops%20cookbook)
+4. Data Science Cookbook
 5. DataOps Cookbook
-6. [Glossary](http://10.12.69.216/13glossary.html)
+6. [Glossary](http://184.83.30.149:57778/13glossary.html)
 
 
 **Disclaimer**
@@ -32,7 +51,7 @@ This document is organized as follows:
 My name is Tony Butzer and I work with the Open Data Cube and PANGEO communities to help make science easy and fun.
 
 I just completed 9 month project to move the EvapoTranspiration VegET model from on-prem desktops to the cloud.
-This team was pleased with the perfomance improvements afforded by AWS S3. However; there is still much work to do on all of our parts to make the PANGEO experience useful to a broad class of scientific needs.
+This team was pleased with the performance improvements afforded by AWS S3. However; there is still much work to do on all of our parts to make the PANGEO experience useful to a broad class of scientific needs.
 
 I want to build relationships with the science teams and help understand and fill any gaps in the PANGEO solution.
 
@@ -57,9 +76,9 @@ TO THIS
 TO THIS
 ![](https://raw.githubusercontent.com/tonybutzer/data-curation/master/dataDog/eng/assets/dispose.jpg)
 
-Compute is commodidty and nowhere is this more true than the kingdom of the cloud.
+Compute is commodity and nowhere is this more true than the kingdom of the cloud.
 
-Don't fret over costs in the cloud. Because it will impeed your progress to getting there.
+Don't fret over costs in the cloud. Because it will impede your progress to getting there.
 
 If the cloud is at the top of Mount McKinley - ("those HPC bastards already stole the name Denali - what a great name.) then this class should be like finding a secret elevator in the middle of the mountain.
 
@@ -67,8 +86,8 @@ If the cloud is at the top of Mount McKinley - ("those HPC bastards already stol
 
 ## Expected Audience 
 
-- A scientist that wants Landsat and/or Sentinel at their findertips and wants to provide their output/product to a wide range of customers
-- A scientist that wants to easily share models and papers with individuals inside and ouside of USGS.
+- A scientist that wants Landsat and/or Sentinel at their fingertips and wants to provide their output/product to a wide range of customers
+- A scientist that wants to easily share models and papers with individuals inside and outside of USGS.
 - A young python programmer that wants to make an impact on the world
 
 - A project scientist that wants to easily exploit AWS
@@ -91,13 +110,13 @@ If the cloud is at the top of Mount McKinley - ("those HPC bastards already stol
 <img src="https://github.com/tonybutzer/harmony/raw/main/documentation/source/Assets/early-adopt.PNG" width="40%">
 
 
-## How can the cloud serve the diverse/byzantine EROS Science Division?
+## How can the cloud serve the diverse/Byzantine EROS Science Division?
 
 - In our Open Data Cube Hackathons - we divide the group into threads:
 	- Developers
 	- Users - Scientists?
-	- Partners - Managers, Stakeholders
-- Some folks will fit into multiple Threads - that's ok
+	- Partners - Managers, Stake-holders
+- Some folks will fit into multiple Threads - that's OK
 - In the cloud we have tools that can serve each of these elements as well as hybrids
 - Gabriel Senay is a fabulous scientist that delegates all his Jupyter work.
 
@@ -116,13 +135,14 @@ If the cloud is at the top of Mount McKinley - ("those HPC bastards already stol
 - Harmony - for lots of reasons
 - "Stop Building Dark Repositories; Dark Repositories Suck"
 - "Custom cloud training for the eclectic USGS/EROS science team"
-- "Deep Dive into PANGEO; pangeo bootcamp"
+- "Deep Dive into PANGEO; pangeo boot-camp"
 - "One size fits all PANGEO training FAILED to make a big enough impact!"
 - "PANGEO its way more than just notebooks"
 - "Day in the Life of a New Cloud Science Project"
 - " ET Case Study"
-- "permaFrost case study"
+- "permafrost case study"
 - "The Cloud? ... Is this Anything?; Are we onto something here?"
+- "A firehose of info - followed by an epiphany and several zen moments."
 - Ten things to do immediately with your new CHS CUSTOM ACCOUNT
 
 
@@ -139,7 +159,7 @@ The INSTANCE butzer-harmony-neal-web is running -- t2.micro
 10.12.69.216
 
 
-### also need a mini-pangeo -- aka the littleist jupyter hub HERE - action - whole class and tony
+### also need a mini-pangeo -- aka the littlest jupyter hub HERE - action - whole class and tony
 
 ```
 
@@ -236,7 +256,12 @@ I am looking for people who do Python in Jupyter to Join Forces
 
 . A used chromebook
 ![](./Assets/used_chromebook.PNG)
+
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="200">
+
 ---
+
+- a chromebook and the right github repo is worth $200,000 a year.
 
 - https://github.com/tonybutzer/harmony/blob/main/class/06-Instructor/01-Students.ipynb
 - http://10.12.69.216:8080/notebooks/jovyan/06-Instructor/01-Students.ipynb
@@ -343,6 +368,8 @@ So, there are several aspects that I'm interested in.
 
 ### Qiang (chi-ong)
 
+### Sanath
+
 ### Neal
 - Understand AWS services and service costs
 - Compare methods and ease of use of the AWS cloud versus other platforms - HPC and GEE
@@ -400,7 +427,7 @@ So, there are several aspects that I'm interested in.
 - Just start a chat with tony butzer anytime - I will add the question and maybe the solution to this pangeo-cloud-web-training-student-teacher-guide-roadmap-sphinx-thingy.
 
 ### Niche/Esoteric Jargon can be a real turn-off!
-- So I will grow a glossary here [GLOSSARY LINK](http://10.12.69.216/13glossary.html?highlight=glossary)
+- So I will grow a glossary here [GLOSSARY LINK](http://184.83.30.149:57778/13glossary.html)
 
 ## References
 

@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week 17 Google Cloud and AWS Oh My &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Week 17 Google Cloud and AWS Oh My</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/17week.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-17-google-cloud-and-aws-oh-my">
+<h1>Week 17 Google Cloud and AWS Oh My<a class="headerlink" href="#week-17-google-cloud-and-aws-oh-my" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>so many technical options and choices - so little time.</p></li>
+</ul>
+<div class="section" id="what-does-this-class-teach-again">
+<h2>What does this class teach again?<a class="headerlink" href="#what-does-this-class-teach-again" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>How to exploit the AWS Cloud via CHS</p></li>
+<li><p>PANGEO - Xarray, Pandas, Holoviews …</p></li>
+<li><p>DevOps for the science guys</p></li>
+<li><p>Moving, Wrangling Data with less effort and less time</p></li>
+<li><p>Don’t MOVE your data - teleport to Oregon - us-west-2</p></li>
+<li><p>Jupyter and Python - easy to write - easy to run</p></li>
+<li><p>Docker its in there</p></li>
+</ol>
+</div>
+<div class="section" id="future-classes">
+<h2>Future Classes<a class="headerlink" href="#future-classes" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Logan - HLS experiments for ECO-invasive</p></li>
+<li><p>Aaron - s3 direct access LPDAAC HLS</p></li>
+<li><p>Kelcy - time series landsat</p></li>
+<li><p>Pat Danielson, Kory, Brett, Brian Tolk – Compositing - NLCD and FireScience</p></li>
+<li><p>Simson –&gt; Jupyter Quick Start</p></li>
+<li><p>Erica Degagga –&gt; Landfire Initiatives in the Cloud</p></li>
+<li><p>Tony –&gt; Searching disorganized git repos</p></li>
+<li><p>Neal CoP presentation on using Cloud + Cloud + HPC + AI/ML/DL</p></li>
+</ol>
+</div>
+<div class="section" id="past-videos">
+<h2>Past Videos<a class="headerlink" href="#past-videos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>teams does not make it easy to share for new users</p>
+<ul>
+<li><p>past channel is not available</p></li>
+<li><p>test with Simson negative result</p></li>
+</ul>
+</li>
+<li><p>Game of Thrones is 67 hours – this is less than 20 so far</p></li>
+</ul>
+<div class="section" id="k-90daytemp">
+<h3>K 90daytemp<a class="headerlink" href="#k-90daytemp" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>k:/90daytemp/butzer/AWS_PANGEO_VIDEOS</p></li>
+</ul>
+<div class="section" id="featured-video">
+<h4>Featured Video<a class="headerlink" href="#featured-video" title="Permalink to this headline">¶</a></h4>
+<p>K:\90daytemp\butzer\AWS_PANGEO_VIDEOS\2020_12_08_AWS_PANGEO On-boarding with Tony and Neal.mp4</p>
+</div>
+</div>
+</div>
+<div class="section" id="pangeo-access">
+<h2>Pangeo Access<a class="headerlink" href="#pangeo-access" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>https://taskmgr.chs.usgs.gov/servicedesk/customer/portal/10/create/251</p></li>
+<li><p>https://taskmgr.chs.usgs.gov/servicedesk/customer/portal/10</p></li>
+</ul>
+<div class="section" id="evapo-cartoon">
+<h3>Evapo Cartoon<a class="headerlink" href="#evapo-cartoon" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/tonybutzer/et/blob/master/docs/source/00status">https://github.com/tonybutzer/et/blob/master/docs/source/00status.md</a></p>
+<ul class="simple">
+<li><p>https://github.com/tonybutzer/et/blob/master/docs/source/00status.md</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-context">
+<h2>Class Context<a class="headerlink" href="#class-context" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Projects that use mutiple modern compute resources</p></li>
+<li><p>CHS AWS development accounts - EC2 elastic, ephemeral computer – with S3 and git for persistence</p></li>
+<li><p>HPC - especially Tallgrass - cause its availabkle and has GPUs</p></li>
+<li><p>Part of our model family SSEBop is computed/modeled using Google Cloud Platform and GEE</p></li>
+<li><p>GSUTIL and RCLONE featured</p></li>
+<li><p>Refresher on DOCKER and SINGULARITY</p></li>
+<li><p>using pangeo.chs.usgs.gov for displaying ssebop</p></li>
+<li><p>Open Data Cube abstractions BUT with PANGEO for Landsat Albers Scenes</p></li>
+</ol>
+</div>
+<div class="section" id="demo-overview">
+<h2>Demo Overview<a class="headerlink" href="#demo-overview" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Look at google cloud bucket assets - ssebop</p></li>
+<li><p>demo how to replicate/sync/copy those to our AWS DataLake</p></li>
+<li><p>demo using docker to build an image for gsutil – google utility</p></li>
+<li><p>demo running the container on AWS</p></li>
+<li><p>demo running the container/sif on Tallgrass</p></li>
+<li><p>demo looking at the tif file with Pangeo on tallgrass via ssh tunnel of port 8888</p></li>
+</ol>
+<hr class="docutils" />
+<ol class="simple">
+<li><p>redo Nate’s Waubay for albers and rgb</p>
+<ul class="simple">
+<li><p>composite repo?</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>https://console.cloud.google.com/storage/browser/ssebop-modis/Annual</p></li>
+</ul>
+</div>
+<div class="section" id="rclone-examples">
+<h2>Rclone Examples<a class="headerlink" href="#rclone-examples" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>tony –&gt; umyssh minipangeo</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mi">1984</span>  <span class="n">cat</span> <span class="n">Dockerfile</span>
+ <span class="mi">1985</span>  <span class="n">cat</span> <span class="n">Makefile</span>
+ <span class="mi">1986</span>  <span class="n">cd</span>
+ <span class="mi">1987</span>  <span class="n">ls</span>
+ <span class="mi">1988</span>  <span class="n">rclone</span> <span class="n">config</span>
+ <span class="mi">1989</span>  <span class="n">ls</span>
+ <span class="mi">1990</span>  <span class="n">rclone</span> <span class="n">listremotes</span>
+ <span class="mi">1991</span>  <span class="n">rclone</span> <span class="n">config</span>
+ <span class="mi">1992</span>  <span class="n">rlone</span> <span class="n">ls</span> <span class="n">sbop</span><span class="p">:</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span>
+ <span class="mi">1993</span>  <span class="n">rclone</span> <span class="n">ls</span> <span class="n">sbop</span><span class="p">:</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span>
+ <span class="mi">1994</span>  <span class="n">rclone</span> <span class="n">sync</span> <span class="o">-</span><span class="n">P</span> <span class="n">sbop</span><span class="p">:</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span><span class="n">Annual</span> <span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">-</span><span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">datalake</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span><span class="n">Annual</span><span class="o">/</span>
+ <span class="mi">1995</span>  <span class="n">aws</span> <span class="n">s3</span> <span class="n">ls</span> <span class="n">dev</span><span class="o">-</span><span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">datalake</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span><span class="n">Annual</span><span class="o">/</span>
+ <span class="mi">1996</span>  <span class="n">aws</span> <span class="n">s3</span> <span class="n">ls</span> <span class="n">dev</span><span class="o">-</span><span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">datalake</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span><span class="n">Annual</span><span class="o">/</span> <span class="o">--</span><span class="n">human</span>
+ <span class="mi">1997</span>  <span class="n">gdalinfo</span> <span class="o">/</span><span class="n">vsis3</span><span class="o">/</span><span class="n">dev</span><span class="o">-</span><span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">datalake</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span><span class="n">Annual</span><span class="o">/</span><span class="n">y2003_modisSSEBopETv4_actual_mm</span><span class="o">.</span><span class="n">tif</span>
+ <span class="mi">1998</span>  <span class="n">ls</span>
+ <span class="mi">1999</span>  <span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+ <span class="mi">2000</span>  <span class="n">rclone</span> <span class="n">listremotes</span>
+ <span class="mi">2001</span>  <span class="n">rclone</span> <span class="n">ls</span> <span class="n">sbop</span><span class="p">:</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span>
+ <span class="mi">2002</span>  <span class="n">rclone</span> <span class="n">ls</span> <span class="n">sbop</span><span class="p">:</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span> <span class="o">--</span><span class="n">help</span>
+ <span class="mi">2003</span>  <span class="n">rclone</span> <span class="n">lsjson</span> <span class="n">sbop</span><span class="p">:</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span>
+ <span class="mi">2004</span>  <span class="n">rclone</span> <span class="n">lsjson</span> <span class="n">sbop</span><span class="p">:</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span><span class="n">Annual</span>
+ <span class="mi">2005</span>  <span class="n">rclone</span> <span class="n">ls</span> <span class="n">sbop</span><span class="p">:</span><span class="o">/</span><span class="n">ssebop</span><span class="o">-</span><span class="n">modis</span><span class="o">/</span><span class="n">Annual</span>
+ <span class="mi">2006</span>  <span class="n">history</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="arcpy-vs-open-source">
+<h2>ARCPY vs. Open Source<a class="headerlink" href="#arcpy-vs-open-source" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="databases-are-so-yesterday">
+<h2>Databases are so yesterday<a class="headerlink" href="#databases-are-so-yesterday" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="but-if-you-insist-on-postgres">
+<h2>But if you insist on postgres<a class="headerlink" href="#but-if-you-insist-on-postgres" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="i-am-talking-to-you-opendatacube">
+<h3>I am talking to you OpenDataCube<a class="headerlink" href="#i-am-talking-to-you-opendatacube" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>THEN - at least use docker to minimize the PAIN!</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ubuntu@ip-10-12-68-246:/opt/cube-in-a-box$ more docker-compose.yml
+version: &#39;3&#39;
+
+services:
+  postgres:
+    image: postgis/postgis:10-2.5
+    environment:
+      - POSTGRES_DB=opendatacube
+      - POSTGRES_PASSWORD=opendatacubepassword
+      - POSTGRES_USER=opendatacube
+    ports:
+      - 5432:5432
+    restart: always
+
+  jupyter:
+    build: .
+    environment:
+      - DB_HOSTNAME=postgres
+      - DB_USERNAME=opendatacube
+      - DB_PASSWORD=opendatacubepassword
+      - DB_DATABASE=opendatacube
+      - AWS_NO_SIGN_REQUEST=true
+      - STAC_API_URL=https://earth-search.aws.element84.com/v0/
+    ports:
+      - &quot;8080:8888&quot;
+    volumes:
+      - ./notebooks:/notebooks
+    restart: always
+    command: jupyter notebook --allow-root --ip=&quot;0.0.0.0&quot; --NotebookApp.token=&#39;secretpassword&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-does-a-world-class-data-center-look-like">
+<h2>What does a world class data center look like?<a class="headerlink" href="#what-does-a-world-class-data-center-look-like" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>lean and agile</p></li>
+<li><p>Highly TRAINED</p></li>
+<li><p>communicates across informal channels</p></li>
+<li><p>Common Goal - effective use of the planet’s limited resources -</p></li>
+<li><p>A world or universe view</p></li>
+<li><p>fosters the right CULTURE</p>
+<ul class="simple">
+<li><p>sharing and confidence</p></li>
+<li><p>respects each other’s expertise</p></li>
+<li><p>has each other’s back</p></li>
+<li><p>has fun at work</p></li>
+<li><p>rejects management styles that don’t inspire</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="these-classes-propose-pangeo-as-a-way-for-science">
+<h2>These classes propose PANGEO as a way for science<a class="headerlink" href="#these-classes-propose-pangeo-as-a-way-for-science" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Open Data Cube - is an instance of PANGEO</p>
+<ul>
+<li><p>its database for me represents a barrier to entry</p></li>
+<li><p>that said its a cool and powerful abstraction for building xarray timeseries applications that run in Pangeos</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>WEEK 8 - Remote Sensing is Hard &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>WEEK 8 - Remote Sensing is Hard</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/08week.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-8-remote-sensing-is-hard">
+<h1>WEEK 8 - Remote Sensing is Hard<a class="headerlink" href="#week-8-remote-sensing-is-hard" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Making it easy will challenge us</p></li>
+<li><p>We will need naive ambition and energy to conquer this</p></li>
+</ul>
+<div class="section" id="how-will-we-ever-make-science-easy">
+<h2>How will we ever make science easy<a class="headerlink" href="#how-will-we-ever-make-science-easy" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Move data - all data into shared data lakes - prewrangled - WIP</p></li>
+<li><p>Move the Scientist to the data</p></li>
+<li><p>Build an easy ito use software eco-system/set-of-libraries in python</p></li>
+<li><p>Teach the scientists just enuf python</p></li>
+<li><p>Teach the library builders and devops people lots of python and the details of remotely sensed data</p></li>
+<li><p>Build middleware that deals with all the nuances of Remote Sensed Data</p>
+<ul class="simple">
+<li><p>Open Data Cube ?</p></li>
+</ul>
+</li>
+<li><p>Understand the trade-offs and adapt our thinking accordingly</p></li>
+<li><p>Communicate like crazy - Collaborate like the human race depends on it</p></li>
+<li><p>Buy water futures over California on the NASDAQ</p></li>
+</ol>
+</div>
+<div class="section" id="tl-dr-evangelize-and-implement-the-pangeo-vision">
+<h2>TL;DR - Evangelize and Implement the Pangeo Vision<a class="headerlink" href="#tl-dr-evangelize-and-implement-the-pangeo-vision" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="intro-paragraph">
+<h2>Intro Paragraph<a class="headerlink" href="#intro-paragraph" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>for next tuesdays class - I am working on a simplified waubay example using landsat-8 only from a mature catalog as well as more explanations on pandas, xarray, and STAC catalogs - we will have some AI plans and composite plans in Git that I will glide thru as well … more to come. lots of training and practical examples are emerging … some data wrangling for Steffi as well</p>
+</div></blockquote>
+</div>
+<div class="section" id="purpose-of-the-week8-class">
+<h2>Purpose of the WEEK8 Class<a class="headerlink" href="#purpose-of-the-week8-class" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>More examples of notebooks building xarrays</p>
+<ul>
+<li><p>wuabay without all of the sat-api in your face</p></li>
+<li><p>how cloudy is it - Maine?</p></li>
+<li><p>Albers is alright, UTM is alright ‘They just seem a little weird’, ‘surrender, surrender’ - 4326</p></li>
+<li><p>using lite-stac - little cube - open data cube lite - limited utility</p>
+<ul>
+<li><p>smaller memory AOI’s only - works with 4326 AOI and UTM data</p></li>
+<li><p>ad-hoc science - quick demos</p></li>
+<li><p>heavier science likely needs</p>
+<ul>
+<li><p>open data cube</p></li>
+<li><p>or something like lcmaps interface via ChipMunk, aardvark - http … # perhaps sped up</p></li>
+<li><p>we will play (R&amp;D) with open data cube and sentinel - over Maine - and deal with projections</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Gentle introduction into Open Data Cube abtractions and middleware</p></li>
+<li><p>Visualize and verify Steffi’s new input data for full CONUS Models</p></li>
+<li><p>Identify the R&amp;D cloud efforts and try to tie them together into a theme</p>
+<ul>
+<li><p>Invasive</p></li>
+<li><p>AI tensorflow - meets NLCD - Rangelands</p></li>
+<li><p>Geomedian, Euclidean Composites as base inputs to land classifiers</p></li>
+<li><p>4 jupyter/pangeo(mini) sandboxes - 2 in landsat (need to go away) 1 in science(invasive) a few(4) in the queue and bigPangeo</p></li>
+</ul>
+</li>
+<li><p>50 greatest western movies - into a pandas data frame - how do folks manage streaming decision fatigue</p></li>
+<li><p>pandas and xarray and geopandas - have similar slicing methods - raster and vector spaces</p></li>
+<li><p>Initial glimpse into the challanges of compositing</p></li>
+<li><p>Projections hurt my brain - Albers, UTM and 4326</p></li>
+<li><p>one on one or small splinter sessions on cloud meets python meets - data - meets scientist are happening -</p></li>
+<li><p>Emerging, nascent data inputs - landsat[utm,albers], sentinel, - climate, soils, etc …</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">spreadsheet</span></code> - show it now?</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="coming-soon">
+<h2>Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>more data wrangling of Cheatgrass - unzipping pipeline … cflux AGAIN - <code class="docutils literal notranslate"><span class="pre">Logan?</span></code></p></li>
+<li><p>HLS trials and tribulations - Devandra?</p>
+<ul>
+<li><p>Opportunities to work with the LPDAAC [‘Cole K.’, ‘Aaron F.’]</p></li>
+</ul>
+</li>
+<li><p>… AI .. tensorflow … into git ….</p></li>
+<li><p>composite NLDC Rangeland Pat, Brett, Kory</p>
+<ul>
+<li><p>compare/collaborate Aussie composite methods with US EROS methods - develop best-of-breed</p></li>
+<li><p>young github repo exists here</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/tonybutzer/composite/tree/main/10-code-reference">https://github.com/tonybutzer/composite/tree/main/10-code-reference</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>The World Geodetic System (WGS) is a standard for use in cartography, geodesy, and satellite navigation including GPS. This standard includes the definition of the coordinate system’s fundamental and derived constants, the ellipsoidal (normal) Earth Gravitational Model (EGM), a description of the associated World Magnetic Model (WMM), and a current list of local datum transformations.</p>
+</div></blockquote>
+<blockquote>
+<div><p>The latest revision is WGS 84 (also known as WGS 1984, EPSG:4326), established and maintained by the United States National Geospatial-Intelligence Agency since 1984, and last revised in 2004</p>
+</div></blockquote>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>git</p></li>
+<li><p>data to be organized properly in the cloud</p>
+<ul>
+<li><p>Collection-2 STAC and sat-search improvements</p></li>
+<li><p>Albers with STAC and sat-search</p></li>
+</ul>
+</li>
+<li><p>data we are playing with</p>
+<ul>
+<li><p>landsat-pds - Landsat 8 public data set - sponsored by Planet and AWS</p></li>
+</ul>
+</li>
+<li><p>HLS (BOF) birds-of-a-feather working group</p>
+<ul>
+<li><p>Need to have Cole K go thru his notebook and what he knows - Aaron Friez as well</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><a class="reference external" href="https://earthdata.nasa.gov/esds/harmonized-landsat-sentinel-2">https://earthdata.nasa.gov/esds/harmonized-landsat-sentinel-2</a></p>
+<p><a class="reference external" href="https://svs.gsfc.nasa.gov/4745">https://svs.gsfc.nasa.gov/4745</a></p>
+<p><a class="reference external" href="https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4880&amp;button=recent">https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4880&amp;button=recent</a></p>
+</div>
+<div class="section" id="info-and-viz">
+<h2>info and viz<a class="headerlink" href="#info-and-viz" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>repeat cycle - revisits</p></li>
+<li><p>covid-sats</p></li>
+</ul>
+<p><img alt="http://www.beyondgeek.com/wp-content/uploads/2013/02/Sputnik_670.jpg" src="http://www.beyondgeek.com/wp-content/uploads/2013/02/Sputnik_670.jpg" /></p>
+</div>
+<div class="section" id="stac-catalog-high-level-collections">
+<h2>STAC Catalog - high level collections<a class="headerlink" href="#stac-catalog-high-level-collections" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://10.12.69.233/user/butzer/notebooks/opt/notebook/00-Harmony/01-composites-Albers-new/00-list-STAC-Catalog-Collections.ipynb">http://10.12.69.233/user/butzer/notebooks/opt/notebook/00-Harmony/01-composites-Albers-new/00-list-STAC-Catalog-Collections.ipynb</a></p>
+</div>
+<div class="section" id="simplifed-waubay">
+<h2>Simplifed Waubay<a class="headerlink" href="#simplifed-waubay" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">uses</span> <span class="n">sat</span><span class="o">-</span><span class="n">search</span>
+<span class="o">-</span> <span class="n">Dinesh</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">good</span> <span class="n">way</span> <span class="n">to</span> <span class="n">play</span> <span class="k">with</span> <span class="n">moving</span> <span class="n">the</span> <span class="n">AOI</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://10.12.69.233/user/butzer/notebooks/opt/notebook/00-Harmony/00-A-waubay-simple/0-waubay-simple-via-open-data-cube-lite.ipynb">http://10.12.69.233/user/butzer/notebooks/opt/notebook/00-Harmony/00-A-waubay-simple/0-waubay-simple-via-open-data-cube-lite.ipynb</a></p>
+</div>
+<div class="section" id="git-repo-tour">
+<h2>Git Repo Tour<a class="headerlink" href="#git-repo-tour" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>tensorflow</p></li>
+<li><p>composite</p>
+<ul>
+<li><p><a class="reference external" href="https://www.usgs.gov/media/images/conterminous-us-landsat-analysis-ready-data-ard-tiles">THE GRID</a></p></li>
+<li><p><a class="reference external" href="https://www.usgs.gov/core-science-systems/nli/landsat/landsat-shapefiles-and-kml-files">https://www.usgs.gov/core-science-systems/nli/landsat/landsat-shapefiles-and-kml-files</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="netflix-distration-20">
+<h2>Netflix Distration 20<a class="headerlink" href="#netflix-distration-20" title="Permalink to this headline">¶</a></h2>
+<p>http://10.12.69.233/user/butzer/notebooks/opt/notebook/00-Harmony/01-composites-Albers-new/00-list-STAC-Catalog-Collections.ipynb</p>
+</div>
+<div class="section" id="validating-input-data-via-yml-config">
+<h2>Validating Input Data via YML Config<a class="headerlink" href="#validating-input-data-via-yml-config" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">Pandas</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://nbviewer.jupyter.org/github/tonybutzer/etviz/blob/master/0-0-10-degree-viz/99-yaml-input-pandas.ipynb">https://nbviewer.jupyter.org/github/tonybutzer/etviz/blob/master/0-0-10-degree-viz/99-yaml-input-pandas.ipynb</a>
+<img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/600px-Pandas_logo.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/600px-Pandas_logo.svg.png" /></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="https-registry-opendata-aws-sentinel-2-l2a-cogs">
+<h2><a class="reference external" href="https://registry.opendata.aws/sentinel-2-l2a-cogs/">https://registry.opendata.aws/sentinel-2-l2a-cogs/</a><a class="headerlink" href="#https-registry-opendata-aws-sentinel-2-l2a-cogs" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="end-of-week8">
+<h2>END OF WEEK8<a class="headerlink" href="#end-of-week8" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="future-classes">
+<h2>Future Classes<a class="headerlink" href="#future-classes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="docker">
+<h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="stac-sat-api-sat-search-curators-end-points-catalogs-items-assets-more-json-than-you-can-stand">
+<h3>STAC, sat-api, sat-search  –&gt; curators, end-points, catalogs, items, assets … more json than you can stand<a class="headerlink" href="#stac-sat-api-sat-search-curators-end-points-catalogs-items-assets-more-json-than-you-can-stand" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="data-transfer-to-the-denali">
+<h3>Data Transfer to the Denali … ??? ??? ???<a class="headerlink" href="#data-transfer-to-the-denali" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

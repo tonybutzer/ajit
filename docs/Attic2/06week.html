@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>WEEK 6 - Case Studies ECO &amp; ET &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>WEEK 6 - Case Studies ECO &amp; ET</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/06week.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-6-case-studies-eco-et">
+<h1>WEEK 6 - Case Studies ECO &amp; ET<a class="headerlink" href="#week-6-case-studies-eco-et" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="death-by-demo">
+<h2>Death by Demo<a class="headerlink" href="#death-by-demo" title="Permalink to this headline">¶</a></h2>
+<p>The subjects include:</p>
+<ul class="simple">
+<li><p>cloud activity continues to GROW</p>
+<ul>
+<li><p>Dinesh, Trenton</p>
+<ul>
+<li><p>next week we will do a STAC/sat-search and xarray using the landsat-pds bucket - PUBLIC, PUBLIC PUBLIC - some buckets are almost Public</p></li>
+</ul>
+</li>
+<li><p>Mike Oimoen, Logan etc</p></li>
+<li><p>CHS sponsored science</p></li>
+<li><p>Steffi Kagone working on getting her own CHS Custom space - Just like Neal’s</p>
+<ul>
+<li><p>Kagone modeled 150 years of Delaware River - now wants to do CONUS.</p>
+<ul>
+<li><p>Scientists think big - Science has the answers!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Danielson, Postma, Neal et al have Tensorflow experience!</p></li>
+<li><p>Doucette encourages cloud AI/ML and python at EROS.</p>
+<ul>
+<li><p>move science into the cloud - I agree obviously</p></li>
+<li><p>Kelcy made the comment that AI/ML is a field where we should share knowledge across projects</p></li>
+</ul>
+</li>
+<li><p>A CHS Data Lake is needed</p></li>
+<li><p>Tony offers to alpha-test Q-GIS and arcGIS in the cloud. - stay tuned …</p></li>
+<li><p>Tony frightens Neal with a half-backed cost analyzer Notebook</p></li>
+<li><p>Aaron Friez and Cole K. are planning advanced Pangeo/DASK classes in CHS - using this class as a springboard. - You should attend when it pops up on the calendar,</p></li>
+</ul>
+</li>
+<li><p>phenology - dashboards are nifty.</p></li>
+<li><p>machine learning with Tensorflow - what kind of shoe is this?</p></li>
+<li><p>evaporation and transpiration for 150 flippin years – NO SWEAT!</p></li>
+<li><p>orchestration - its not just for clarinets and violins - DEFER</p></li>
+<li><p>how to cheat at AWS S3 bucketology with import fsspec</p></li>
+<li><p>AMAZED at how Many items in this python eco-system boil down to one-line of code.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="birds-of-a-feather-groupings">
+<h1>Birds-of-a-feather groupings<a class="headerlink" href="#birds-of-a-feather-groupings" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="phenology">
+<h2>Phenology<a class="headerlink" href="#phenology" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://afternoon-crag-97068.herokuapp.com/">https://afternoon-crag-97068.herokuapp.com/</a></p>
+<ul class="simple">
+<li><p><em>Points</em></p>
+<ul>
+<li><p>python app written in Plotly Dash</p></li>
+<li><p>phenology based on landcover</p></li>
+<li><p>interactive - good responsiveness</p></li>
+<li><p>serverless(CATTLE) - heroku, binder, AWS lambda - AWS Batch(quasi)</p></li>
+</ul>
+</li>
+<li><p>more to come.</p>
+<ul>
+<li><p>next week a discussion on HLS - NDVI Dev/Logan/Mike</p></li>
+<li><p>Creating NDVI with Landsat 8 - public data sets and Xarray</p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="https://www.usgs.gov/core-science-systems/eros/phenology/science/ndvi-foundation-remote-sensing-phenology?qt-science_center_objects=0#qt-science_center_objects">https://www.usgs.gov/core-science-systems/eros/phenology/science/ndvi-foundation-remote-sensing-phenology?qt-science_center_objects=0#qt-science_center_objects</a></p>
+</div>
+<div class="section" id="tensorflow">
+<h2>Tensorflow<a class="headerlink" href="#tensorflow" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://10.12.68.150:8080/tree/tensorflow-tutorials">http://10.12.68.150:8080/tree/tensorflow-tutorials</a></p>
+<ul class="simple">
+<li><p>Run from a container on the mini-pangeo</p></li>
+<li><p>Training example shoes and shirts</p></li>
+<li><p>The sandal looks like a sneaker to me</p></li>
+<li><p>Movie sentiment analysis</p></li>
+<li><p>tensorflow for dummies - on kbr - skillport - free free free</p></li>
+<li><p>Machine learning research to be actively funded by USGS - Sunne has the contact -</p>
+<ul>
+<li><p>Matthew Kuckuk - Reno Nevada</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/opt/logan/tools/tensorflow$ more Makefile
+
+        docker run -it -p 8080:8888 tensorflow/tensorflow:nightly-jupyter
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="case-studies-eco-data-wrangling">
+<h1>Case Studies Eco - Data Wrangling<a class="headerlink" href="#case-studies-eco-data-wrangling" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>RAPV2</p></li>
+<li><p>HLS</p></li>
+<li><p>MRLZ - unzip pipeline</p></li>
+</ul>
+<p>Consider this web app:
+<a class="reference external" href="https://rangelands.app">https://rangelands.app</a></p>
+<p>poor mans version here:
+<a class="reference external" href="http://10.12.68.150/user/butzer/tree/opt/logan/00-notebooks/02-eco-viz">http://10.12.68.150/user/butzer/tree/opt/logan/00-notebooks/02-eco-viz</a></p>
+<div class="section" id="data-pipelines-and-orchestration">
+<h2>Data Pipelines and Orchestration<a class="headerlink" href="#data-pipelines-and-orchestration" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/tonybutzer/etm/blob/master/02-orchestration-launcher/etm-conductor-orchestration-v2.py">etm-conductor-orchestration-v2</a></p>
+</div>
+</div>
+<div class="section" id="docker-uses">
+<h1>Docker Uses<a class="headerlink" href="#docker-uses" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>demo cog generation from sapv2 tif</p></li>
+<li><p>demo unzip convert from .img and make cog mrlc-BITv3</p></li>
+<li><p>both of these from custom docker containers and simple docker heuristics</p></li>
+</ul>
+<div class="section" id="viz-app-for-etasw">
+<h2>Viz app for etasw<a class="headerlink" href="#viz-app-for-etasw" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://10.12.68.246/user/butzer/tree/opt/etviz/0-application-et-view">http://10.12.68.246/user/butzer/tree/opt/etviz/0-application-et-view</a></p>
+<p><a class="reference external" href="http://10.12.68.246/user/butzer/notebooks/opt/etviz/0-application-et-view/99-vrt-fail.ipynb#">http://10.12.68.246/user/butzer/notebooks/opt/etviz/0-application-et-view/99-vrt-fail.ipynb#</a></p>
+</div>
+</div>
+<div class="section" id="next-week">
+<h1>Next Week<a class="headerlink" href="#next-week" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-wrangling-of-mrlc-data">
+<h2>Data Wrangling of MRLC Data<a class="headerlink" href="#data-wrangling-of-mrlc-data" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="harmonized-landsat-and-sentinel-hls">
+<h2>Harmonized Landsat and Sentinel HLS<a class="headerlink" href="#harmonized-landsat-and-sentinel-hls" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Cole Krehbiel</p></li>
+<li><p>[HLS and geoviews]</p>
+<ul>
+<li><p>https://www.google.com/search?client=firefox-b-1-d&amp;q=lp+daac+jupyter+gallery</p></li>
+<li><p><a class="reference external" href="https://lpdaac.usgs.gov/resources/e-learning/">E-Learning</a></p></li>
+<li><p><a class="reference external" href="https://lpdaac.usgs.gov/resources/e-learning/getting-started-cloud-native-hls-data-python/">Getting Started with Cloud-Native HLS Data in Python</a></p></li>
+<li><p><a class="reference external" href="https://lpdaac.usgs.gov/resources/e-learning/masking-visualizing-and-plotting-appeears-output-geotiff-time-series-python/">iowa plotting EVI</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="from-rich-signell-s-ocean-example">
+<h2>From Rich Signell’s ocean example<a class="headerlink" href="#from-rich-signell-s-ocean-example" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://nbviewer.jupyter.org/gist/rsignell-usgs/f4dd62ad1274c5b5ed69e5a6b81c1295">geoviews example and cog overviews</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

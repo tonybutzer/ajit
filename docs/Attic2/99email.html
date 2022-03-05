@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Appendix (Unstructured Notes) &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Appendix (Unstructured Notes)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/99email.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appendix-unstructured-notes">
+<h1>Appendix (Unstructured Notes)<a class="headerlink" href="#appendix-unstructured-notes" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<hr class="docutils" />
+<p>Stef, et al</p>
+<p>We should setup another more ET project focused meeting in 2 weeks to go over the project charter and fill in some color.</p>
+<p>I am setting up a project web site for the ET cloud experiment.- more details to follow …. Project charter, project decisions, documenting the infrastructure, organizing the python libraries (numerous) – identifying risks, issues, obstacles. – approval processes etc – data wrangling and storing in object storage, permissions, firewalling security  … …</p>
+<p>I am using terraform infrastructure as code to stand this webserver up in minutes (AWS). – details available here
+https://github.com/tonybutzer/et  – tfinfra – et-project-webserver</p>
+<p>I will be using markdown to create a project website, starting with a project charter to define the who and the how.
+And clarify for me the what and the when.</p>
+<p>I believe that we will be doing the development/research phase outside the pangeo.chs.usgs.gov arena and may eventually do something joint with the Aussies – they really have the best open source approaches and more experience than the USGS in xarrays meet the AWS cloud – - This is a ways down the road and I will work on getting people used to that collaboration idea starting with the USGS/GA Steering Group of big wigs – Pete Doucette is chairing a session in April on Cloud Computing Meets Collection-2  - I will be giving a 90 minute talk in that session – ET will be one of the exciting highlights I believe.</p>
+<p>Once we have a proof of concept and a lightweight concept of operations – we can define the options for scaling and production creation of ET products as well as creative ways to use the browser to present these to Science co-conspirators in the ET realm. – This may use AWS batch like our cloud based LPGS system uses or Kubernetes with auto scaling like the Aussies use.</p>
+<p>I’ll update you as we move forward.</p>
+<p>We will need to brief Kristi Kline, Steve Labahn and Pete Doucette – once we have a comprehensive research story.</p>
+<p>-tony</p>
+<div class="section" id="trivial-details-below">
+<h2>Trivial details below<a class="headerlink" href="#trivial-details-below" title="Permalink to this headline">¶</a></h2>
+<p><strong>$3.45</strong> per month.  – https://calculator.s3.amazonaws.com/index.html</p>
+</div>
+<div class="section" id="kickoff-email">
+<h2>Kickoff Email<a class="headerlink" href="#kickoff-email" title="Permalink to this headline">¶</a></h2>
+<p>Thanks for your time today. I am excited to help look at using AWS and open source code to model Evaporation and Transpiration (ET).</p>
+<p>We will start to look at the data sets needed and cloud bucket loading strategies – we have lots of experience here and S3 is makes this fairly simple. I have some machine access on the internal networks at EROS and Renee and I can look at sanctioned methods of transferring and organizing this data into indexed buckets. – Indexing in some cases may be as simple as directory tree/object tree traversal. And we have STAC and postgres models as well.</p>
+<p>I prefer the simple approaches where plausible.</p>
+<p>I like Mac’s idea of getting the data staged and having simple notebooks that display the scope and visualize each data subcomponent/bucket for ET – composite modelling.</p>
+<p>Below is the link from Renee-The-Awesome to register for pangeo sponsored by the usgs inside the CHS enclave.</p>
+<p>I will document this choice of Pangeo and we will evaluate the ramifications as we go along. – Once Collection-2 is PUBLICLY released we can likely work in other sandboxes on any Landsat centric science application.  We will likely use the Collection-1/Level-2/Albers/WRS-2/Scene Data Lake as a proxy for Collection-2 in the short term to try to keep schedule slippage risk to a minimum.</p>
+<p>I plan to add Nathan’s cool new dask-enhanced notebook on creating a long term time series xarray from a Landsat Data Lake to my eclectic cache of notebook examples in github.</p>
+<p>We will evaluate different methods for searching metadata catalogs and creating xarray abstractions. Open Data Cube can resample pixels and reproject pixels if necessary to merge disparate data into synergized abstractions.</p>
+<p>I will start to contemplate ways to engage non-usgs folks in the collaboration – even if we have to replicate small samples of the data in other buckets until the world has a robust set of directly, publicly accessible, data and aux data.</p>
+<p>Gabriel Parrish: - Here is a great resource to enhance your already rich Markdown skills for documenting notebooks.
+https://jonschlinkert.github.io/remarkable/demo/</p>
+<p>ET in the cloud!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
