@@ -15,9 +15,9 @@
 - http://lastools.org/
 
 - short list for now
-	- lasinfo	prints out an overview of the contents of a LAS/LAZ file
- 	- laszip	powerful, lossless LiDAR compressor that turns large LAS files into much smaller LAZ files that are only 7 - 20 percent of the original file size
-	- lasboundary	computes a boundary polygon
+	- `lasinfo	prints out an overview of the contents of a LAS/LAZ file
+ 	- `laszip	powerful, lossless LiDAR compressor that turns large LAS files into much smaller LAZ files that are only 7 - 20 percent of the original file size
+	- `lasboundary	computes a boundary polygon
 
 - full list
  	- laszip	powerful, lossless LiDAR compressor that turns large LAS files into much smaller LAZ files that are only 7 - 20 percent of the original file size
