@@ -1,8 +1,8 @@
 all: html git 
 
 html:
-	(cd .. && make )
+	(cd .. && make html )
 
 
 git:
-	(cd ../../ && make publish)
+	(cd ../../ && ./gitpush.sh)
