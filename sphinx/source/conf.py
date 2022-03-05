@@ -21,8 +21,8 @@ source_parsers = {'.md': CommonMarkParser}
 
 # -- Project information -----------------------------------------------------
 
-project = 'AWS PANGEO Jupyter Onboarding'
-copyright = '2020, Tony Butzer'
+project = 'LiDAR in the cloud'
+copyright = '2022, Tony Butzer'
 author = 'Tony Butzer'
 
 # The full version, including alpha/beta/rc tags

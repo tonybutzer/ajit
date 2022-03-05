@@ -110,11 +110,16 @@ A compute/computer/ec2/instance in the cloud is the same as a computer in EROS's
 ---
 # Overview
 
-- Project Initiation and Student Roadmap
+- Project Initiation and Setup
 
-- Practical Steps
+- LiDAR exploration
 
-- Why
+- Infrastucture
+	- S3 object storage - AWS
+		- assessment
+	- Compute
+		- EC2 - AWS
+		- pangeo.chs.usgs.gov - ??
 
 - Cloud Differences
 
@@ -124,25 +129,12 @@ A compute/computer/ec2/instance in the cloud is the same as a computer in EROS's
 
 - Cloud Disadvantages
 
-- ET Case Study
-
-- PANGEO - "Dedicated to easing the data and compute burdens for THE SCIENTIST"
-
-- Jupyter
-
-- AWS Compute
-
-- AWS Storage
-
-- AWS Public Data Available
-
 - Data Wrangling
 	- ssh 
 	- scp
 
-- Who from Science is Exploring the Cloud
-
 - Project Specific Specialities
+	- Collab vs. Jupyter/PANGEO
 	- SageMaker and ML
 
 ---
