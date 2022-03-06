@@ -109,12 +109,25 @@ upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/aj
 - https://github.com/dcasota/photonos-scripts/wiki/Configure-Potree%2C-a-WebGL-based-viewer-for-large-point-clouds%2C-on-VMware-Photon-OS
 
 
+## Areas od Study - Ideas
+
+- https://code.visualstudio.com/docs/setup/linux
+
+- https://www.usgs.gov/news/technical-announcement/usgs-3dep-lidar-point-cloud-now-available-amazon-public-dataset
+
+- https://github.com/stac-extensions/pointcloud
+
+- https://medium.com/codait/nodebooks-node-js-data-science-notebooks-aa140bea21ba
+
+- https://www.amazon.com/Head-First-JavaScript-Programming-Freeman/dp/144934013X/ref=as_li_ss_tl?ie=UTF8&qid=1442769823&sr=8-15&keywords=javascript&linkCode=sl1&tag=nethta-20&linkId=840b2a3569091af4a8106c27c814a16b
+
 # Links first blush
 
 ### formats for 3d pointclouds
 
 - https://info.vercator.com/blog/what-are-the-most-common-3d-point-cloud-file-formats-and-how-to-solve-interoperability-issues
 
+- https://www.google.com/search?channel=tus5&client=firefox-b-1-d&q=node+gulp+watch
 
 ### pointcloud to triangles
 
