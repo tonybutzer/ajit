@@ -40,6 +40,9 @@ upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/aj
 	- lastools capabilities
 
 
+## wine version
+- https://github.com/hawkaa/docker-lastools/blob/master/Dockerfile
+
 # Conversions Reprojecting Decimating
 
 - https://www.cs.unc.edu/~isenburg/lastools/download/las2las_README.txt
