@@ -10,7 +10,7 @@
 ### potree docker image
 
 ### 3DEP - conda based docker image - demo
-- base container
+- **base container**
 - application container
 - bucket scraper
 - STAC json scraper
