@@ -12,6 +12,7 @@ Welcome to AWS -- PANGEO Onboarding Training
 
    00define_lidar.md
    1_Engineering_Notebook.md
+   2_orig_readme.md
 
 Indices and tables
 ==================
