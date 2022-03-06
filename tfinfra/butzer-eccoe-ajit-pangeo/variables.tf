@@ -6,13 +6,13 @@ variable "region" {
 variable "ship_instance_type" {
   description = "ships - The instance type."
   # default = "c5.9xlarge"
-  default = "m5.8xlarge"
+  default = "t3a.2xlarge"
 }
 
 variable "subnet_id" {
   description = "The AWS network id representing the allowed vpc"
   # internal-Subnet-B
-  default = "subnet-08f1118dd59133513"
+  default = "subnet-0dd447dd1e3e8f355"
 }
 
 variable "ship_userdata" {
@@ -22,7 +22,7 @@ variable "ship_userdata" {
 
 variable "ship_name" {
   description = "ship names - DUH!"
-  default = ["butzer-eccoe-vendor8x-iarpa", "butzer-eccoe-vextra"]
+  default = ["butzer-eccoe-ajit-pangeo", "butzer-sship-1"]
 }
 
 variable "key_name" {

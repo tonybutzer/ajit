@@ -15,15 +15,15 @@ resource "aws_instance" "mini" {
   tags = {
     Name = var.ship_name[count.index]
     Owner = "butzer@contractor.usgs.gov"
-    Project = "Iarpa-Smart"
+    Project = "WaterSmart"
   }
   iam_instance_profile                    =var.iam_role
 
   security_groups = [var.security_group_ssh, var.security_group_web]
-  root_block_device {volume_size = 440}
+  root_block_device {volume_size = 840}
   # user_data = file("ship0.sh")
 
 
-  count = 2
-  #count = 1
+  #count = 2
+  count = 1
 }

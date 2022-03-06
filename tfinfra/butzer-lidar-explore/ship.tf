@@ -15,7 +15,7 @@ resource "aws_instance" "mini" {
   tags = {
     Name = var.ship_name[count.index]
     Owner = "butzer@contractor.usgs.gov"
-    Project = "Iarpa-Smart"
+    Project = "WaterSmart"
   }
   iam_instance_profile                    =var.iam_role
 
@@ -24,6 +24,6 @@ resource "aws_instance" "mini" {
   # user_data = file("ship0.sh")
 
 
-  count = 2
-  #count = 1
+  #count = 2
+  count = 1
 }
