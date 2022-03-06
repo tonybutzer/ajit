@@ -104,6 +104,11 @@ upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/aj
 	- blast2iso	process billion of LIDAR points from the LAS/LAZ format, triangulates them a seamless (!) TIN, and extracts contours at the specified elevations from the TIN
 	- and even more...	see the full product overview
 
+# Photon Azure Viewer
+
+- https://github.com/dcasota/photonos-scripts/wiki/Configure-Potree%2C-a-WebGL-based-viewer-for-large-point-clouds%2C-on-VMware-Photon-OS
+
+
 # Links first blush
 
 ### formats for 3d pointclouds
