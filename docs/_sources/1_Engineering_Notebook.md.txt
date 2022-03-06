@@ -2,12 +2,31 @@
 
 - https://en.wikipedia.org/wiki/Lidar
 
+
 # What's New
+
+## Experiments
+
+### potree docker image
+
+### 3DEP - conda based docker image - demo
+- base container
+- application container
+- bucket scraper
+- STAC json scraper
+- simple panel app prototypes
+
+### rclone testing from tallgrass:/caldera --> eccoe-lidar (s3 bucket)
 
 - working on command line ways to visualize LiDAR files and objects
 	- lastools - compiling the gcc to create Linux binaries in a container
 	- lastools - with Windows *.exe* files using wine in a docker container - cool maybe
 	- lastools capabilities
+
+
+# Conversions Reprojecting Decimating
+
+- https://www.cs.unc.edu/~isenburg/lastools/download/las2las_README.txt
 
 
 		- 
