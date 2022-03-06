@@ -119,6 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#potree-docker-image">potree docker image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dep-conda-based-docker-image-demo">3DEP - conda based docker image - demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rclone-testing-from-tallgrass-caldera-eccoe-lidar-s3-bucket">rclone testing from tallgrass:/caldera –&gt; eccoe-lidar (s3 bucket)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">example</a></li>
 </ul>
 </li>
 </ul>
@@ -230,6 +231,21 @@
 </div>
 <div class="section" id="rclone-testing-from-tallgrass-caldera-eccoe-lidar-s3-bucket">
 <h3>rclone testing from tallgrass:/caldera –&gt; eccoe-lidar (s3 bucket)<a class="headerlink" href="#rclone-testing-from-tallgrass-caldera-eccoe-lidar-s3-bucket" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example">
+<h3>example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(lidarV2) [ec2-user@ip-10-12-69-95 ~]$ aws s3 ls s3://eccoe-lidar/ajit/
+2022-03-06 17:54:05  137136235 HT404_1580305001_1264340300747572_1.las
+
+ aws s3 sync data s3://eccoe-lidar/
+upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/ajit/HT404_1580305001_1264340300747572_1.las
+
+(lidarV2) [ec2-user@ip-10-12-69-95 ~]$ history | grep scp
+  338  lscpu
+  637  scp butzer@tallgrass.cr.usgs.gov:/caldera/projects/usgs/water/impd/butzer/* .
+  654  history | grep scp
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>working on command line ways to visualize LiDAR files and objects</p>
 <ul>

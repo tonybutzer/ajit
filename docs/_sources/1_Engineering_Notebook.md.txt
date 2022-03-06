@@ -18,6 +18,22 @@
 
 ### rclone testing from tallgrass:/caldera --> eccoe-lidar (s3 bucket)
 
+### example
+
+```
+(lidarV2) [ec2-user@ip-10-12-69-95 ~]$ aws s3 ls s3://eccoe-lidar/ajit/
+2022-03-06 17:54:05  137136235 HT404_1580305001_1264340300747572_1.las
+
+ aws s3 sync data s3://eccoe-lidar/
+upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/ajit/HT404_1580305001_1264340300747572_1.las
+
+(lidarV2) [ec2-user@ip-10-12-69-95 ~]$ history | grep scp
+  338  lscpu
+  637  scp butzer@tallgrass.cr.usgs.gov:/caldera/projects/usgs/water/impd/butzer/* .
+  654  history | grep scp
+
+```
+
 - working on command line ways to visualize LiDAR files and objects
 	- lastools - compiling the gcc to create Linux binaries in a container
 	- lastools - with Windows *.exe* files using wine in a docker container - cool maybe
