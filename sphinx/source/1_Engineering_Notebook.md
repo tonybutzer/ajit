@@ -5,6 +5,15 @@
 
 # What's New
 
+## Ajit examples
+
+#### March 2022 
+
+- Exploring USGS LiDAR with STAC info
+	- https://github.com/tonybutzer/ajit/blob/main/experiments/3dep/notebooks/notebooks/90_aws_lidar_3dep_basics_stac.ipynb
+- Where on earth is ajits data from the bucket - plus .gitignore files
+	- https://github.com/tonybutzer/ajit/blob/main/experiments/3dep/notebooks/notebooks/89_ajit_data_in_s3.ipynb
+
 ## Experiments
 
 ### potree docker image
