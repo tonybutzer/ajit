@@ -130,6 +130,8 @@ upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/aj
 
 - https://www.amazon.com/Head-First-JavaScript-Programming-Freeman/dp/144934013X/ref=as_li_ss_tl?ie=UTF8&qid=1442769823&sr=8-15&keywords=javascript&linkCode=sl1&tag=nethta-20&linkId=840b2a3569091af4a8106c27c814a16b
 
+
+- https://prd-tnm.s3.amazonaws.com/LidarExplorer/index.html#/
 # Links first blush
 
 ### formats for 3d pointclouds
