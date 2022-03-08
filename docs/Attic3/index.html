@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Oahe Lidar &mdash; LiDAR in the cloud 1.0 documentation</title>
+  <title>Welcome to Using CHS AWS ECCOE to Visualize and Process LiDAR &mdash; LiDAR in the cloud 1.0 documentation</title>
   
 
   
@@ -35,8 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lidar USGS South Dakota Data in the Cloud" href="2_orig_readme.html" />
-    <link rel="prev" title="LiDAR" href="1_Engineering_Notebook.html" /> 
+    <link rel="next" title="Lidar in the CHS AWS Cloud" href="00define_lidar.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +49,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> LiDAR in the cloud
+            <a href="#" class="icon icon-home"> LiDAR in the cloud
           
 
           
@@ -81,7 +80,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#executive-summary">Executive Summary</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
@@ -123,11 +122,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#experiments">Experiments</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="1_Engineering_Notebook.html#viewing-data-with-the-potree-viewer">Viewing Data With the Potree Viewer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="1_Engineering_Notebook.html#https-github-com-hobu-usgs-lidar">https://github.com/hobu/usgs-lidar/</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="1_Engineering_Notebook.html#cool-notes-from-readme">Cool Notes from Readme</a></li>
-<li class="toctree-l4"><a class="reference internal" href="1_Engineering_Notebook.html#http-server-don-t-forget-the-tunnel">Http server - don’t forget the tunnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1_Engineering_Notebook.html#https-github-com-hobu-usgs-lidar">https://github.com/hobu/usgs-lidar/</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#specifics-display">specifics display</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="1_Engineering_Notebook.html#cool-notes-from-readme">Cool Notes from Readme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1_Engineering_Notebook.html#http-server-don-t-forget-the-tunnel">Http server - don’t forget the tunnel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="1_Engineering_Notebook.html#potree-docker-image">potree docker image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="1_Engineering_Notebook.html#dep-conda-based-docker-image-demo">3DEP - conda based docker image - demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="1_Engineering_Notebook.html#rclone-testing-from-tallgrass-caldera-eccoe-lidar-s3-bucket">rclone testing from tallgrass:/caldera –&gt; eccoe-lidar (s3 bucket)</a></li>
@@ -159,7 +159,7 @@
 <li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#jupyter-viz">jupyter viz</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Oahe Lidar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_data.html">Oahe Lidar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_orig_readme.html">Lidar USGS South Dakota Data in the Cloud</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="2_orig_readme.html#current-action">Current Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_orig_readme.html#actions">Actions</a></li>
@@ -185,7 +185,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">LiDAR in the cloud</a>
+          <a href="#">LiDAR in the cloud</a>
         
       </nav>
 
@@ -214,15 +214,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>Oahe Lidar</li>
+      <li>Welcome to Using CHS AWS ECCOE to Visualize and Process LiDAR</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/10_data.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -235,10 +235,79 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="oahe-lidar">
-<h1>Oahe Lidar<a class="headerlink" href="#oahe-lidar" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-using-chs-aws-eccoe-to-visualize-and-process-lidar">
+<h1>Welcome to Using CHS AWS ECCOE to Visualize and Process LiDAR<a class="headerlink" href="#welcome-to-using-chs-aws-eccoe-to-visualize-and-process-lidar" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#executive-summary">Executive Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#human-resources">Human Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#github">github</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_Engineering_Notebook.html">LiDAR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Engineering_Notebook.html#what-s-new">What’s New</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#potreeconverter">PotreeConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#ajit-examples">Ajit examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#experiments">Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#specifics-display">specifics display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#wine-version">wine version</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_Engineering_Notebook.html#conversions-reprojecting-decimating">Conversions Reprojecting Decimating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#lastools">lastools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_Engineering_Notebook.html#photon-azure-viewer">Photon Azure Viewer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#areas-od-study-ideas">Areas od Study - Ideas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_Engineering_Notebook.html#links-first-blush">Links first blush</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#formats-for-3d-pointclouds">formats for 3d pointclouds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#pointcloud-to-triangles">pointcloud to triangles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_Engineering_Notebook.html#open3d-videos">open3d videos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#git">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#pypotree">pypotree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#medium-article">medium article</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#hoop-3d-cad">hoop 3d cad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#lidar-books">lidar books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Engineering_Notebook.html#jupyter-viz">jupyter viz</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10_data.html">Oahe Lidar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_orig_readme.html">Lidar USGS South Dakota Data in the Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_orig_readme.html#current-action">Current Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_orig_readme.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_orig_readme.html#ssh">ssh</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>https://portal.opentopography.org/usgsDataset?dsid=SD_NRCS_QSI_A3_2017</p></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </div>
 
@@ -250,10 +319,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="2_orig_readme.html" class="btn btn-neutral float-right" title="Lidar USGS South Dakota Data in the Cloud" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="00define_lidar.html" class="btn btn-neutral float-right" title="Lidar in the CHS AWS Cloud" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="1_Engineering_Notebook.html" class="btn btn-neutral float-left" title="LiDAR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

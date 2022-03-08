@@ -123,11 +123,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#experiments">Experiments</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#viewing-data-with-the-potree-viewer">Viewing Data With the Potree Viewer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#https-github-com-hobu-usgs-lidar">https://github.com/hobu/usgs-lidar/</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#cool-notes-from-readme">Cool Notes from Readme</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#http-server-don-t-forget-the-tunnel">Http server - don’t forget the tunnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#https-github-com-hobu-usgs-lidar">https://github.com/hobu/usgs-lidar/</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#specifics-display">specifics display</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cool-notes-from-readme">Cool Notes from Readme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http-server-don-t-forget-the-tunnel">Http server - don’t forget the tunnel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#potree-docker-image">potree docker image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dep-conda-based-docker-image-demo">3DEP - conda based docker image - demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rclone-testing-from-tallgrass-caldera-eccoe-lidar-s3-bucket">rclone testing from tallgrass:/caldera –&gt; eccoe-lidar (s3 bucket)</a></li>
@@ -288,20 +289,14 @@
 <ul class="simple">
 <li><p>read this first</p></li>
 <li><p>specifics conversion</p></li>
-<li><p>specifics display</p>
-<ul>
-<li><p>see below</p></li>
+<li></li>
 </ul>
-</li>
-<li><p>need a potree users guide</p></li>
-<li><p>the big viewer - not as satisfying</p>
-<ul>
-<li><p>https://usgs.entwine.io/data/view.html?r=%22https://s3-us-west-2.amazonaws.com/usgs-lidar-public/SD_Yankton_County_2012%22</p></li>
-</ul>
-</li>
-</ul>
+</div>
+</div>
+<div class="section" id="specifics-display">
+<h2>specifics display<a class="headerlink" href="#specifics-display" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cool-notes-from-readme">
-<h4>Cool Notes from Readme<a class="headerlink" href="#cool-notes-from-readme" title="Permalink to this headline">¶</a></h4>
+<h3>Cool Notes from Readme<a class="headerlink" href="#cool-notes-from-readme" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>https://github.com/connormanning/entwine</p></li>
 </ul>
@@ -318,12 +313,11 @@ tory like -i ~/county-data/ to index multiple files. Now we can statically serve
 ~/entwine with a simple HTTP server:</p>
 </div>
 <div class="section" id="http-server-don-t-forget-the-tunnel">
-<h4>Http server - don’t forget the tunnel<a class="headerlink" href="#http-server-don-t-forget-the-tunnel" title="Permalink to this headline">¶</a></h4>
+<h3>Http server - don’t forget the tunnel<a class="headerlink" href="#http-server-don-t-forget-the-tunnel" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">~/</span><span class="n">entwine</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8080</span><span class="p">:</span><span class="mi">8080</span> <span class="n">connormanning</span><span class="o">/</span><span class="n">http</span><span class="o">-</span><span class="n">server</span>
 </pre></div>
 </div>
 <p>And view the data with Potree and Plasio.</p>
-</div>
 </div>
 <div class="section" id="potree-docker-image">
 <h3>potree docker image<a class="headerlink" href="#potree-docker-image" title="Permalink to this headline">¶</a></h3>
@@ -366,6 +360,12 @@ upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/aj
 </ul>
 </div>
 </div>
+<li><p>need a potree users guide</p></li>
+<li><p>the big viewer - not as satisfying</p>
+<ul class="simple">
+<li><p>https://usgs.entwine.io/data/view.html?r=%22https://s3-us-west-2.amazonaws.com/usgs-lidar-public/SD_Yankton_County_2012%22</p></li>
+</ul>
+</li>
 <div class="section" id="wine-version">
 <h2>wine version<a class="headerlink" href="#wine-version" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

@@ -35,7 +35,7 @@
 - specifics conversion
 
 - specifics display
-	- 
+	-  see below
 
 - need a potree users guide
 
