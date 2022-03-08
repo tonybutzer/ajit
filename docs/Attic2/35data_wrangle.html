@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Wrangle &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Data Wrangle</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/35data_wrangle.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-wrangle">
+<h1>Data Wrangle<a class="headerlink" href="#data-wrangle" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="rclone-is-the-bomb">
+<h1>rclone is THE BOMB!<a class="headerlink" href="#rclone-is-the-bomb" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">rclone</span> <span class="pre">copy</span> <span class="pre">MODIS_NDVI/</span> <span class="pre">et-data:/ga-et-data/MODIS_NDVI/</span>&#160; <span class="pre">-P</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>tony@qotom ~ $ rclone copy MODIS_NDVI/ et-data:/ga-et-data/MODIS_NDVI/  -P 
+Transferred:   	   43.191G / 46.937 GBytes, 92%, 1.255 MBytes/s, ETA 50m56s
+Transferred:         1009 / 1099, 92%
+Elapsed time:   9h47m18.8s
+Transferring:
+ *            2016/2016335.1_km_16_days_NDVI.tif: 91% /131.284M, 66.102k/s, 2m51s
+Transferred:   	   43.241G / 46.937 GBytes, 92%, 1.255 MBytes/s, ETA 50m15s
+Transferred:         1009 / 1099, 92%
+Elapsed time:   9h47m59.3s
+Transferring:
+ *            2016/2016335.1_km_16_days_NDVI.tif: 95% /131.284M, 106.963k/s, 1m0s
+Transferred:   	   43.959G / 46.937 GBytes, 94%, 1.255 MBytes/s, ETA 40m29s
+Transferred:         1033 / 1099, 94%
+Elapsed time:   9h57m47.3s
+Transferring:
+ *            2016/2016343.1_km_16_days_NDVI.tif: 27% /131.284M, 296.605k/s, 5m29s
+ *            2016/2016344.1_km_16_days_NDVI.tif: 22% /131.284M, 312.016k/s, 5m32s
+ *            2016/2016345.1_km_16_days_NDVI.tif: 19% /131.284M, 281.528k/s, 6m22s
+ *            2016/2016346.1_km_16_days_NDVI.tif: 17% /131.284M, 405.909k/s, 4m33s
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-netapp">
+<h1>Using the NETAPP<a class="headerlink" href="#using-the-netapp" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>docker container on llsrlscd04</p></li>
+<li><p>rclone container</p></li>
+<li><p>docker exec -it rclone bash</p></li>
+<li><p>su butzer</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rclone</span> <span class="n">copy</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">Projects</span><span class="o">/</span><span class="n">Cloud_Veg_ET</span><span class="o">/</span><span class="n">Data</span><span class="o">/</span><span class="n">ETO</span><span class="o">/</span> <span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">ga</span><span class="o">-</span><span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">Cloud_Veg_ET</span><span class="o">/</span><span class="n">Data</span><span class="o">/</span><span class="n">ETO</span><span class="o">/</span> <span class="o">-</span><span class="n">P</span>
+
+<span class="n">rclone</span> <span class="n">copy</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">Projects</span><span class="o">/</span><span class="n">Cloud_Veg_ET</span><span class="o">/</span><span class="n">Data</span><span class="o">/</span><span class="n">NDVI</span> <span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">ga</span><span class="o">-</span><span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">Cloud_Veg_ET</span><span class="o">/</span><span class="n">Data</span><span class="o">/</span><span class="n">NDVI</span> <span class="o">-</span><span class="n">P</span>
+
+<span class="n">PPT</span>
+</pre></div>
+</div>
+<p>rclone copy et-data:ga-et-data/v1DRB_outputs/model_outputs/ /mnt/Projects/Cloud_Veg_ET/fromtony/ -P</p>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="air-temperature">
+<h2>Air Temperature<a class="headerlink" href="#air-temperature" title="Permalink to this headline">¶</a></h2>
+<p><em>./push-scp-ga.sh air_temperature</em>:</p>
+<p>loading from local disk to cloud EBS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mon</span><span class="p">,</span> <span class="n">Feb</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">2020</span>  <span class="mi">1</span><span class="p">:</span><span class="mi">19</span><span class="p">:</span><span class="mi">16</span> <span class="n">PM</span>
+
+<span class="n">Mon</span><span class="p">,</span> <span class="n">Feb</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">2020</span>  <span class="mi">2</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mi">21</span> <span class="n">PM</span>
+</pre></div>
+</div>
+<p>4.6 Gigabytes in an hour an a half - thru the VPN and TIC.</p>
+<ul class="simple">
+<li><p>more to come ….</p></li>
+</ul>
+</div>
+<div class="section" id="sync-to-bucket">
+<h2>Sync to Bucket<a class="headerlink" href="#sync-to-bucket" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>make a inputsv0 prefix</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3api</span> <span class="pre">put-object</span> <span class="pre">--bucket</span> <span class="pre">ga-et-data-west</span> <span class="pre">--key</span> <span class="pre">inputsv0/</span> </code></p>
+</div>
+<div class="section" id="actual-sync">
+<h2>Actual Sync<a class="headerlink" href="#actual-sync" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dry-run">
+<h3>Dry run<a class="headerlink" href="#dry-run" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"> <span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">./air_temperature</span> <span class="pre">s3://ga-et-data-west/inputsv0/air_temperature</span> <span class="pre">--dryrun</span></code></p>
+</div>
+<div class="section" id="for-reals">
+<h3>For Reals<a class="headerlink" href="#for-reals" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"> <span class="pre">time</span> <span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">./air_temperature</span> <span class="pre">s3://ga-et-data-west/inputsv0/air_temperature</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real</span>    <span class="mi">1</span><span class="n">m44</span><span class="o">.</span><span class="mi">966</span><span class="n">s</span>
+<span class="n">user</span>    <span class="mi">0</span><span class="n">m39</span><span class="o">.</span><span class="mi">020</span><span class="n">s</span>
+<span class="n">sys</span>     <span class="mi">0</span><span class="n">m23</span><span class="o">.</span><span class="mi">729</span><span class="n">s</span>
+</pre></div>
+</div>
+<p>what took <em>an hour and a half</em> - can be done in <em>1 minute and a half</em></p>
+<ul class="simple">
+<li><p>that’s the cloud - its awesome - S3 is powerful</p></li>
+<li><p>and everyone can access the same buckets directly - think about it and <em>smile</em> :-)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="nuke-prefix">
+<h2>Nuke prefix<a class="headerlink" href="#nuke-prefix" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"> <span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">rm</span> <span class="pre">--recursive</span>&#160; <span class="pre">s3://ga-et-data-west/inputsv0/</span> <span class="pre">--dryrun</span></code></p>
+</div>
+<div class="section" id="precipitation">
+<h2>Precipitation<a class="headerlink" href="#precipitation" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"> <span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">./precipitation</span> <span class="pre">s3://ga-et-data-west/inputsv0/precipitation</span> <span class="pre">--dryrun</span></code></p>
+<div class="section" id="id1">
+<h3>For Reals<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"> <span class="pre">time</span> <span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span> <span class="pre">./precipitation</span> <span class="pre">s3://ga-et-data-west/inputsv0/precipitation</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real</span>    <span class="mi">2</span><span class="n">m43</span><span class="o">.</span><span class="mi">137</span><span class="n">s</span>
+<span class="n">user</span>    <span class="mi">0</span><span class="n">m33</span><span class="o">.</span><span class="mi">461</span><span class="n">s</span>
+<span class="n">sys</span>     <span class="mi">0</span><span class="n">m7</span><span class="o">.</span><span class="mi">885</span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="git-issue">
+<h2>Git Issue?<a class="headerlink" href="#git-issue" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

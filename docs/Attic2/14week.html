@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week 14 - Olena – matplotlib and pandas &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Week 14 - Olena – matplotlib and pandas</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/14week.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-14-olena-matplotlib-and-pandas">
+<h1>Week 14 - Olena – matplotlib and pandas<a class="headerlink" href="#week-14-olena-matplotlib-and-pandas" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Introduction - Tony</p></li>
+<li><p>Evapo model evaluation landscape - <code class="docutils literal notranslate"><span class="pre">Stefanie</span> <span class="pre">Kagone</span></code></p></li>
+<li><p>Using Xarray slicing and Pandas to automate Spreadsheet Model Analysis - <code class="docutils literal notranslate"><span class="pre">Olena</span> <span class="pre">Boiko</span></code></p></li>
+<li><p>Apply cloud solutions to HLS plipelines - <code class="docutils literal notranslate"><span class="pre">Logan</span> <span class="pre">Megard</span></code></p></li>
+<li><p>Using Open Data Cube to align pixels and then bigPangeo (netcdf ingest) to look at clouds in the cloud - tony</p></li>
+</ol>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="eros-items-of-interest">
+<h1>EROS Items of Interest<a class="headerlink" href="#eros-items-of-interest" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Science continues to elevate</p>
+<ul class="simple">
+<li><p>Pete Doucette  - Data Center Director</p></li>
+<li><p>Terry Sohl - Science Lead</p></li>
+</ul>
+</li>
+<li><p>Aaron Friez (Pangeo/DAAC/Science - Workshop/Lecture)</p>
+<ul class="simple">
+<li><p>Organized – April 5?</p></li>
+</ul>
+</li>
+<li><p>Cali - searching for an intern</p>
+<ul class="simple">
+<li><p>In charge of collating disparate/disaggregated training</p></li>
+<li><p>“Oh Cali” - “if the world could just be aggregated”</p></li>
+</ul>
+</li>
+<li><p>Summer Hours for AWS Onboarding - begin May 1. -</p>
+<ul class="simple">
+<li><p>Get Vaccinated - save a scientist we need them.</p></li>
+</ul>
+</li>
+<li><p>Evapo - seeks partnership with Jim Rowland on project cloud account similar to Neal’s and Kelcy’s</p></li>
+<li><p>Evapo Actrivities</p>
+<ul class="simple">
+<li><p>Next cloud model please - SSeBop - meets Modis meets cloud - Thanks Claudia, Olena and Steffi</p></li>
+<li><p>Co-sponsor for NLCD data wrangling and emerging datalake prototype.</p>
+<ul>
+<li><p>Dinesh and Trenton to test NLCD data lake and HLS access</p></li>
+</ul>
+</li>
+<li><p>HUC12 - zonal stats - impress your stakeholder with a map-reduced spreadsheet</p>
+<ul>
+<li><p>Data starts to inform as information</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>HLS Activities Logan</p>
+<ul class="simple">
+<li><p>Tony still does not like Authentication nuances</p></li>
+<li><p>Rehearsing wrangling for Devandra and Sujan</p></li>
+</ul>
+</li>
+<li><p>Open Data Cube - cube-in-a-box - (now a word from my sponsor)</p>
+<ul class="simple">
+<li><p>higher level abstraction - hint at what is possible. - black box - black magic approach.</p></li>
+<li><p>Hey ODC don’t make me index and learn Postgresql and PostGIS - my life is already disaggregated enough</p></li>
+</ul>
+</li>
+<li><p>Tony wakes up and uses github.io</p>
+<ul class="simple">
+<li><p>Using the cloud == FAIL!</p></li>
+<li><p>Using Tony’s home server == FAIL</p></li>
+<li><p>USING GITHUB.IO - I found Goldilocks - this one is just right!</p></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="favorite-featured-references">
+<h2>Favorite/Featured References<a class="headerlink" href="#favorite-featured-references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>http://gallery.pangeo.io/repos/pangeo-data/landsat-8-tutorial-gallery/landsat8.html</p></li>
+<li><p>https://docs.dea.ga.gov.au/notebooks/Frequently_used_code/Masking_data.html</p></li>
+</ul>
+<div class="section" id="pangeo-jupyter-book-that-ryan-abernathey-has-created">
+<h3>Pangeo Jupyter Book - that Ryan Abernathey has Created –&gt;<a class="headerlink" href="#pangeo-jupyter-book-that-ryan-abernathey-has-created" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>https://earth-env-data-science.github.io/intro</p></li>
+</ul>
+</div>
+<div class="section" id="scott-henderson-medium-article">
+<h3>Scott Henderson Medium Article<a class="headerlink" href="#scott-henderson-medium-article" title="Permalink to this headline">¶</a></h3>
+<p>From</p>
+<ul class="simple">
+<li><p>https://medium.com/pangeo/intake-stac-nasa-4cd78d6246b7</p></li>
+<li><p>Scott Henderson - Dec 2020</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span> 
+<span class="nt">Abstractions</span><span class="p">:</span> 
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">openDataCube</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stac-intake</span>
+<span class="nt">Asset-Location</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">S3</span>
+<span class="nt">Deployment-Technology</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">docker-compose</span>
+<span class="nt">Format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">COGS</span>
+<span class="nt">Metadata-Containers</span><span class="p">:</span> 
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">postgis-odc</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stac-json</span>
+<span class="nt">STAC_API_URL</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="s">&#39;https://explorer.sandbox.dea.ga.gov.au/stac/&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="s">&#39;https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs&#39;</span>
+<span class="nt">Sandboxes</span><span class="p">:</span> 
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cube-in-a-box</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pangeo.chs.usgs.gov</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">etrocks-sandbox</span>
+<span class="nt">Satellite</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Sentinel-2A-2B</span>
+<span class="nt">Topics</span><span class="p">:</span> 
+  <span class="p p-Indicator">-</span> <span class="s">&quot;Sentinel</span><span class="nv"> </span><span class="s">SCL&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ODC</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Masking</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Xarray--&gt;netcdf</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">finding-clouds-in-the-cloud</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="featured-instructors-key-points">
+<h1>Featured Instructors - Key Points<a class="headerlink" href="#featured-instructors-key-points" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>pandas, xarray, rasterio, matplotlib, holoviews - xarray.hvplot</p></li>
+<li><p>Innovative_Fast_solutions = open source + brainPower</p></li>
+<li><p>Olena and Steffi Model Verification</p>
+<ul>
+<li><p>Significant as it directly and rapidly improves our scalable model code for Evapo</p></li>
+</ul>
+</li>
+<li><p>Logan HLS 1.4 and 1.5 Research</p></li>
+<li></li>
+</ul>
+<hr class="docutils" />
+<p><a class="reference external" href="https://www.usgs.gov/center-news/calibration-test-site-becomes-agricultural-hotspot?qt-news_science_products=2#qt-news_science_products">https://www.usgs.gov/center-news/calibration-test-site-becomes-agricultural-hotspot?qt-news_science_products=2#qt-news_science_products</a></p>
+<p><img alt="Attic2/Assets/sentenel-scene-classification-levels.PNG" src="Attic2/Assets/sentenel-scene-classification-levels.PNG" /></p>
+<hr class="docutils" />
+<div class="section" id="open-data-cube-odc-glimpse">
+<h2>Open Data Cube (ODC) - glimpse<a class="headerlink" href="#open-data-cube-odc-glimpse" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="use-open-data-cube-to-extract-dwyer-cube-from-sentinal-s3-cogs">
+<h2>Use Open Data Cube to extract Dwyer Cube from Sentinal S3 COGS<a class="headerlink" href="#use-open-data-cube-to-extract-dwyer-cube-from-sentinal-s3-cogs" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="then-use-the-big-pangeo-to-explore-compositing-with-bunde-postma-danielson">
+<h2>Then use the big pangeo to explore Compositing with (Bunde, Postma, Danielson)<a class="headerlink" href="#then-use-the-big-pangeo-to-explore-compositing-with-bunde-postma-danielson" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="odc-outputs-netcdf-nc-files-in-s3">
+<h3>ODC Outputs (netcdf/nc files in S3)<a class="headerlink" href="#odc-outputs-netcdf-nc-files-in-s3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">maine</span><span class="o">.</span><span class="n">nc</span>
+<span class="n">maine_ard</span><span class="o">.</span><span class="n">nc</span>
+<span class="n">maine_masked_s2_all_bands</span><span class="o">.</span><span class="n">nc</span>
+<span class="n">maine_s2_all_bands</span><span class="o">.</span><span class="n">nc</span>
+<span class="n">maine_s2_common_name_bands</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="maine-masked-s2-all-bands-nc">
+<h2>maine_masked_s2_all_bands.nc<a class="headerlink" href="#maine-masked-s2-all-bands-nc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>main test nc file for compositing Maine - R&amp;D only</p></li>
+<li><p>briefly understand cloud and shadow masking</p></li>
+<li><p><a class="reference external" href="http://10.12.68.246:8080/notebooks/composite/30-cubebox-helper/2_tony_save_load_ard_all_bands.ipynb">http://10.12.68.246:8080/notebooks/composite/30-cubebox-helper/2_tony_save_load_ard_all_bands.ipynb</a></p></li>
+<li><p><a class="reference external" href="http://10.12.68.246:8080/notebooks/composite/30-cubebox-helper/00_tony_class_exhibit_learning_odc_claibration_site_Sentinel_2.ipynb">http://10.12.68.246:8080/notebooks/composite/30-cubebox-helper/00_tony_class_exhibit_learning_odc_claibration_site_Sentinel_2.ipynb</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

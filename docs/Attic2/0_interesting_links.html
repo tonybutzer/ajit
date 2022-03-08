@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>formats for 3d pointclouds &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>formats for 3d pointclouds</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/0_interesting_links.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="formats-for-3d-pointclouds">
+<h1>formats for 3d pointclouds<a class="headerlink" href="#formats-for-3d-pointclouds" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>https://info.vercator.com/blog/what-are-the-most-common-3d-point-cloud-file-formats-and-how-to-solve-interoperability-issues</p></li>
+</ul>
+</div>
+<div class="section" id="pointcloud-to-triangles">
+<h1>pointcloud to triangles<a class="headerlink" href="#pointcloud-to-triangles" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>https://stackoverflow.com/questions/63129494/generating-surface-mesh-from-point-cloud-using-plotly</p></li>
+<li><p>https://stackoverflow.com/questions/7879160/algorithm-for-generating-a-triangular-mesh-from-a-cloud-of-points</p></li>
+</ul>
+</div>
+<div class="section" id="open3d-videos">
+<h1>open3d videos<a class="headerlink" href="#open3d-videos" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>https://www.youtube.com/watch?v=Rsh4poEpahI</p></li>
+<li><p>https://www.youtube.com/watch?v=fY_BzTmU9io</p></li>
+<li><p>https://www.youtube.com/watch?v=zF3MreN1w6c</p></li>
+</ul>
+<p>https://www.youtube.com/watch?v=VkRzNYxwyH0</p>
+</div>
+<div class="section" id="git">
+<h1>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<p>https://github.com/centreborelli/pypotree</p>
+</div>
+<div class="section" id="pypotree">
+<h1>pypotree<a class="headerlink" href="#pypotree" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>https://github.com/sitn/pytree</p></li>
+<li><p>https://colab.research.google.com/drive/1It3EbWy9W8Xf65ikP-_tpkVdJRmvwTQT#scrollTo=NfPO-aptsKlC</p></li>
+<li><p>https://github.com/potree/potree</p></li>
+<li><p>https://www.designsafe-ci.org/rw/user-guides/tools-applications/visualization/potree-viewer/</p></li>
+<li><p>https://twitter.com/m_schuetz/status/973145431894085632?lang=en</p></li>
+<li><p>https://github.com/centreborelli/pypotree/blob/master/pypotree.py</p></li>
+<li><p>https://github.com/sitn/pytree</p>
+<ul>
+<li><p>flask application</p></li>
+</ul>
+</li>
+</ul>
+<p>https://github.com/potree/PotreeDesktop/releases/tag/1.6</p>
+<p>https://www.linode.com/community/questions/21270/how-to-serve-static-asset-files-with-flask-and-nginx</p>
+</div>
+<div class="section" id="medium-article">
+<h1>medium article<a class="headerlink" href="#medium-article" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>https://towardsdatascience.com/guide-to-real-time-visualisation-of-massive-3d-point-clouds-in-python-ea6f00241ee0</p></li>
+<li><p>https://blog.jupyter.org/ipygany-jupyter-into-the-third-dimension-29a97597fc33</p></li>
+</ul>
+<p>https://github.com/widgetti/ipyvolume/blob/master/notebooks/demo-0.5.ipynb</p>
+</div>
+<div class="section" id="hoop-3d-cad">
+<h1>hoop 3d cad<a class="headerlink" href="#hoop-3d-cad" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>https://forum.techsoft3d.com/</p></li>
+<li><p>https://github.com/isl-org/Open3D/issues/537</p></li>
+<li><p>https://github.com/isl-org/Open3D/issues/376</p></li>
+<li><p>http://www.open3d.org/docs/0.9.0/tutorial/Basic/azure_kinect.html</p></li>
+</ul>
+</div>
+<div class="section" id="lidar-books">
+<h1>lidar books<a class="headerlink" href="#lidar-books" title="Permalink to this headline">¶</a></h1>
+<p>https://www.goodreads.com/book/show/42996145-lidar-point-cloud-data-processing-and-applications</p>
+</div>
+<div class="section" id="jupyter-viz">
+<h1>jupyter viz<a class="headerlink" href="#jupyter-viz" title="Permalink to this headline">¶</a></h1>
+<p>https://mapbox-mapboxgl-jupyter.readthedocs-hosted.com/en/latest/index.html</p>
+<p>https://gist.githubusercontent.com/kapadia/6359528/raw/b97fe6b8e7d879d07d71603791fe818475ad7ba3/Ruse%2520IPython%2520Notebook</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

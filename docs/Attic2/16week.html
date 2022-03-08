@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week 16 - Welcome Landfire &mdash; AWS PANGEO Jupyter Onboarding 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWS PANGEO Jupyter Onboarding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html">Lidar in the CHS AWS Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#executive-summary">Executive Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#you-really-should-be-using-the-cloud">You really should be using the cloud.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#deliverables">Deliverables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#scientists-will-rule-the-world">Scientists will rule the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#expected-audience">Expected Audience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#vision">Vision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#computers-and-website">Computers and Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#aws-pangeo">AWS Pangeo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#human-resources">Human Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#list-for-now-needs-work">List for now - needs work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#github">github</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#where-are-my-assets">Where are my assets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00define_lidar.html#makefiles-and-dockerfiles">Makefiles and Dockerfiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../00define_lidar.html#overview">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#science-with-a-chromebook">Science with a chromebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#instructors-by-example">Instructors by Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00define_lidar.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AWS PANGEO Jupyter Onboarding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Week 16 - Welcome Landfire</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Attic2/16week.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-16-welcome-landfire">
+<h1>Week 16 - Welcome Landfire<a class="headerlink" href="#week-16-welcome-landfire" title="Permalink to this headline">¶</a></h1>
+<p>Today we welcome the Landfire, FireScience team to this community of best practices and this community of sharing, notebooks, concepts, code , data and most importantly - non-silo-ed talent. Welcome Tolk, Brian (Contractor) L  – and Degaga, Erica J</p>
+<div class="section" id="what-is-this-class">
+<h2>What is this class?<a class="headerlink" href="#what-is-this-class" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>A community of cloud based Scientists that:</p>
+<ul class="simple">
+<li><p>use the cloud</p></li>
+<li><p>some have custom cloud accounts</p></li>
+<li><p>some use the Landsat account</p></li>
+<li><p>some use thebigPangeo</p></li>
+<li><p>some have their own mini-Pangeos/jupyterHubs/sandboxes</p></li>
+<li></li>
+</ul>
+</li>
+<li><p>Notable technologies</p>
+<ul class="simple">
+<li><p>Python</p></li>
+<li><p>Open Source</p></li>
+<li><p>Image Processing and GIS</p>
+<ul>
+<li><p>xarray, pandas, matplotlib, holoviews, geoviews, geopandas, rasterio, GDAL</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Remote Sensing Cloud Stored assets</p>
+<ul class="simple">
+<li><p>Landsat - utm/albers/ —&gt; ARD tiles</p></li>
+<li><p>Sentinel-2-COGs</p></li>
+<li><p>Hamonized Landsat Sentinel</p></li>
+</ul>
+</li>
+<li><p>Making birds-of-a-feather connections in science</p></li>
+<li><p>focus on TRAINING - lets have a highly TRAINED Science team and a world class data center</p>
+<ul class="simple">
+<li><p>start with simple get togethers - this class</p></li>
+<li><p>jot some disorganized notes</p></li>
+<li><p>share some draft notebooks</p></li>
+<li><p>stuff code and docs in github</p></li>
+<li><p>hire an intern to organize and collate this stuff</p></li>
+<li><p>repetition</p></li>
+<li><p>learn how to use git search in the meantime</p></li>
+<li><p>reach out and ask for help - connectors include Rich Signell, Nathan, Aaron Friesz, tony ….</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="teams">
+<h2>Teams<a class="headerlink" href="#teams" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Evapotranspiration – Water - Steffi, Olena</p></li>
+<li><p>Land Cover - Brett, Pat, Kory</p></li>
+<li><p>LCMAP - Kelcy</p></li>
+<li><p>Invasive - Sujan, Devandra, Logan, Neal</p></li>
+<li><p>Web Development Team - Claudia, Maxwell, Michelle, Balu …</p></li>
+<li><p>VegDyn - Trent, Dinesh</p></li>
+<li><p>Emerging AI experts …</p></li>
+</ol>
+<blockquote>
+<div><p>Basically, ostensibly- lots of superior TALENT</p>
+</div></blockquote>
+</div>
+<div class="section" id="a-group-of-experts">
+<h2>A group of experts<a class="headerlink" href="#a-group-of-experts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>here are just a few - there are many i have not enumerated and some i have not yet discovered</p></li>
+</ul>
+<ol class="simple">
+<li><p>Logan Megard - HLS – DevOps</p></li>
+<li><p>Steffi Kagone - Converting Models from ARCPY to rasterio</p></li>
+<li><p>Olena Boiko - Data Wrangling Expert - MOdel QA Expert - Jupyter/matplotlib</p></li>
+<li><p>Kelcy Smith - Python Expert, Jupyter Expert, time-series expert - STAC expert</p></li>
+<li><p>Nathan Roberts - user service - data management</p></li>
+<li><p>tony - DevOps and OpenDataCube, docker, code portability, networking and file transfers</p></li>
+</ol>
+</div>
+<div class="section" id="today">
+<h2>Today<a class="headerlink" href="#today" title="Permalink to this headline">¶</a></h2>
+<p>Today I am privileged to have guest instructors:
+Kagone, Stefanie (Contractor) – and – Boiko, Olena are back for an encore lesson on how to use the bigPangeo - pangeo.chs.usgs.gov to look at refining the sophistication of the model by improving the fidelity of NDVI.</p>
+<p>also …
+Danielson, Patrick (Contractor) – and – Postma, Kory (Contractor) will give an opinionated demo of a notebook on STAC meets one of the mature STAC Catalogs for Sentinel-2-COGs.</p>
+<p>We can talk a little about the data wrangling and scp and rclone we have been doing between the Netapp, Caldera and S3.</p>
+<p>And we can talk about finding Albers Scenes for Landsat Compositing using the young, immature Landsat Stac Catalog.</p>
+<p>Nathan Roberts and Rich Signell are both presenting Pangeo/OpenDataCube papers at conferences this month.</p>
+<p>So the folks attending this class are Early Adopters of technology and infrastructure stacks that will revolutionize science in the next few years.</p>
+</div>
+</div>
+<div class="section" id="prepare-the-pangeo-release-the-kracken">
+<h1>Prepare the Pangeo - release the kracken<a class="headerlink" href="#prepare-the-pangeo-release-the-kracken" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="start-the-pangeo-tony-start-it">
+<h1>start the pangeo tony START IT<a class="headerlink" href="#start-the-pangeo-tony-start-it" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pangeo.cr.usgs.gov">https://pangeo.cr.usgs.gov</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="steffi-and-olena">
+<h2>Steffi and Olena<a class="headerlink" href="#steffi-and-olena" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modis-derived-ndvi-an-land-surface-temperature">
+<h3>Modis derived NDVI an Land Surface Temperature<a class="headerlink" href="#modis-derived-ndvi-an-land-surface-temperature" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Uses the big pangeo</p></li>
+<li><p>uses R**2 to evaluate hypothesis</p></li>
+<li><p>ran in a $200 mini-pangeo - now runs in the freeFREEfree https://pangeo.chs.usgs.gov</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="pat-and-kory">
+<h2>Pat and Kory<a class="headerlink" href="#pat-and-kory" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>so far many have come up to speed with Jupyter Lab/Notebook quickly</p>
+<ul>
+<li><p>The ability to share snippets of code, concepts, visualizations - is a gamechanger</p></li>
+<li><p>Jupyter is not a full-blown IDE - i say so what!</p></li>
+</ul>
+</li>
+<li><p>these few weeks will look at composites with HLS, sentinel and Landsat - starting with data discover via STAC.</p></li>
+</ul>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="make-friends-with-git">
+<h2>Make friends with git<a class="headerlink" href="#make-friends-with-git" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>https:/code.usgs.gov</p></li>
+</ul>
+</div>
+<div class="section" id="quit-hiding-your-code-and-data">
+<h2>quit hiding your code and data -<a class="headerlink" href="#quit-hiding-your-code-and-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="from-kindergarten">
+<h3>From Kindergarten<a class="headerlink" href="#from-kindergarten" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Share everything.
+
+Play fair.
+
+Don’t hit people.
+
+Put things back where you found them.
+
+Clean up your own mess.
+
+Don’t take things that aren’t yours.
+
+Say you’re sorry when you hurt somebody.
+
+Wash your hands before you eat.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="landsat-albers-by-way-of-bt-detour">
+<h2>Landsat Albers by way of BT detour.<a class="headerlink" href="#landsat-albers-by-way-of-bt-detour" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="data-transfer-how-do-i-get-my-data-to-and-from-the-cloud">
+<h2>Data transfer - how do I get my data to and from the cloud<a class="headerlink" href="#data-transfer-how-do-i-get-my-data-to-and-from-the-cloud" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>to is always free</p></li>
+<li><p>from can come with egress costs unless</p>
+<ul>
+<li><p>you use rclone or some other sneaky method</p></li>
+</ul>
+</li>
+<li><p>we were able to get these rates</p>
+<ul>
+<li><p>40 MBytes per second from cladera –&gt; s3</p></li>
+<li><p>2 Mbytes per second using VDI machines for most transfers</p></li>
+<li><p>.5 Mbytes when using windows and the VPN/PulseSecure</p></li>
+</ul>
+</li>
+<li><p>we have played with many fileTransfer agents</p>
+<ul>
+<li><p>tony’s favorites are scp and rclone and perhaps some of their derivatives - like lftp</p></li>
+<li><p>more to come - more help available ….</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">rclone</span> <span class="n">copy</span> <span class="o">-</span><span class="n">P</span> <span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">-</span><span class="n">et</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="ow">in</span><span class="o">/</span><span class="n">DelawareRiverBasin</span><span class="o">/</span><span class="n">PPT</span><span class="o">/</span><span class="mi">2000</span><span class="o">/</span> <span class="n">tallgrass</span><span class="p">:</span><span class="o">/</span><span class="n">caldera</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">usgs</span><span class="o">/</span><span class="n">water</span><span class="o">/</span><span class="n">impd</span><span class="o">/</span><span class="n">butzer</span><span class="o">/</span><span class="n">PPT</span><span class="o">/</span><span class="mi">2000</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="question-of-the-week-partial-git-clones">
+<h2>Question of the Week - Partial Git Clones<a class="headerlink" href="#question-of-the-week-partial-git-clones" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+<span class="k">function</span> git_sparse_clone<span class="o">()</span> <span class="o">(</span>
+  <span class="nv">rurl</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="nv">localdir</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">shift</span> <span class="m">2</span>
+
+  mkdir -p <span class="s2">&quot;</span><span class="nv">$localdir</span><span class="s2">&quot;</span>
+  git config core.sparseCheckout <span class="nb">true</span>
+
+  <span class="c1"># Loops over remaining args</span>
+  <span class="k">for</span> i<span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span> &gt;&gt; .git/info/sparse-checkout
+</pre></div>
+</div>
+<div class="section" id="use-wget-for-single-notebooks">
+<h3>use wget for single notebooks<a class="headerlink" href="#use-wget-for-single-notebooks" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>find the raw link in github</p>
+<ul class="simple">
+<li><p>https://raw.githubusercontent.com/tonybutzer/composite/main/01-danielson/1_LANDSAT_ALBERS_MAINE/0_maine_landsat_albers.ipynb</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tonybutzer</span><span class="o">/</span><span class="n">composite</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="mi">01</span><span class="o">-</span><span class="n">danielson</span><span class="o">/</span><span class="mi">1</span><span class="n">_LANDSAT_ALBERS_MAINE</span><span class="o">/</span><span class="mi">0</span><span class="n">_maine_landsat_albers</span><span class="o">.</span><span class="n">ipynb</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="costs">
+<h3>Costs<a class="headerlink" href="#costs" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ubuntu@ip-10-12-68-246:~$ docker run tbutzer/aws-price python awsprice.py butzer
+[&#39;awsprice.py&#39;, &#39;butzer&#39;]
+butzer
+     state                     name            ip       i_type  monthly_cost
+0  running  butzer-et-mini-pangeo-0  10.12.68.246  t3a.2xlarge       219.584
+1  stopped        butzer-bigsship-0   10.12.69.45  m5a.4xlarge       502.240
+2  running       butzer-tendollar-a  10.12.68.236     t2.micro         8.468
+==========================================================================================
+==========================================================================================
+     state                     name            ip       i_type  monthly_cost
+0  running  butzer-et-mini-pangeo-0  10.12.68.246  t3a.2xlarge       219.584
+2  running       butzer-tendollar-a  10.12.68.236     t2.micro         8.468
+========================================================================================================================
+=====================================================================
+</pre></div>
+</div>
+<p><a class="reference external" href="https://support.chs.usgs.gov/pages/viewpage.action?pageId=40370588">Harry House on Cost - The truthful answer to this question is “it’s complex, and it depends.</a></p>
+<blockquote>
+<div><p>One would presume that most private companies would be aware of the total cost of ownership within their borders and may well be more likely to adopt the Cloud sooner from a cost perspective if nothing else.</p>
+</div></blockquote>
+<p>Here is a list of considerations when contemplating the Cloud or on-premises from the viewpoint of comparable expenses:</p>
+<p>For Using On-premises</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cost</span> <span class="n">to</span> <span class="n">purchase</span> <span class="n">the</span> <span class="n">on</span><span class="o">-</span><span class="n">premises</span> <span class="n">equipment</span>
+
+<span class="n">Cost</span> <span class="n">to</span> <span class="n">configure</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">the</span> <span class="n">on</span><span class="o">-</span><span class="n">premises</span> <span class="n">equipment</span>
+
+<span class="n">Cost</span> <span class="n">to</span> <span class="n">maintain</span> <span class="n">the</span> <span class="n">power</span> <span class="ow">and</span> <span class="n">air</span> <span class="n">conditioning</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">computer</span> <span class="n">room</span>
+
+<span class="n">Cost</span> <span class="n">of</span> <span class="n">the</span> <span class="n">system</span> <span class="n">administrators</span> <span class="n">to</span> <span class="n">support</span> <span class="n">the</span> <span class="n">computer</span> <span class="n">room</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">devices</span> <span class="n">therein</span>
+
+<span class="n">Cost</span> <span class="n">of</span> <span class="n">the</span> <span class="n">floor</span> <span class="n">space</span> <span class="p">(</span><span class="n">rented</span> <span class="ow">or</span> <span class="n">owned</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">usable</span> <span class="k">for</span> <span class="n">other</span> <span class="n">purposes</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">on</span><span class="o">-</span><span class="n">premises</span> <span class="n">system</span>
+
+<span class="n">Cost</span> <span class="n">of</span> <span class="n">on</span><span class="o">-</span><span class="n">site</span> <span class="n">backups</span>
+
+<span class="n">Cost</span> <span class="n">of</span> <span class="n">network</span> <span class="n">connectivity</span>
+
+<span class="n">Cost</span> <span class="n">of</span> <span class="n">meeting</span> <span class="n">security</span> <span class="n">controls</span> <span class="n">related</span> <span class="n">to</span> <span class="n">the</span> <span class="n">facility</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="devops-consulting-tony">
+<h2>DevOps Consulting - tony<a class="headerlink" href="#devops-consulting-tony" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>terraform</p></li>
+<li><p>s3 tricks and traps</p></li>
+<li><p>docker</p></li>
+<li><p>ec2 and costs</p></li>
+</ul>
+</div>
+<div class="section" id="prior-videos-are-available-in-m-stream">
+<h2>Prior videos are available in M$-stream<a class="headerlink" href="#prior-videos-are-available-in-m-stream" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>you can watch these in 2x speed and skip around.</p></li>
+</ul>
+</div>
+<div class="section" id="rich-signell-hidden-gem">
+<h2>Rich SigNELL hidden gem<a class="headerlink" href="#rich-signell-hidden-gem" title="Permalink to this headline">¶</a></h2>
+<p>BTW, I don’t know if you think this is cool, but I found out something new about fsspec this morning… .It’s more than just for s3!<br />https://nbviewer.jupyter.org/gist/rsignell-usgs/8e3051974d0e3a1722369cafe9e0005e</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Tony Butzer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
