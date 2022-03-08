@@ -116,11 +116,19 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LiDAR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#what-s-new">What’s New</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#potreeconverter">PotreeConverter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ajit-examples">Ajit examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#march-2022">March 2022</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#experiments">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-data-with-the-potree-viewer">Viewing Data With the Potree Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#https-github-com-hobu-usgs-lidar">https://github.com/hobu/usgs-lidar/</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#specifics-display">specifics display</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cool-notes-from-readme">Cool Notes from Readme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http-server-don-t-forget-the-tunnel">Http server - don’t forget the tunnel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#potree-docker-image">potree docker image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dep-conda-based-docker-image-demo">3DEP - conda based docker image - demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rclone-testing-from-tallgrass-caldera-eccoe-lidar-s3-bucket">rclone testing from tallgrass:/caldera –&gt; eccoe-lidar (s3 bucket)</a></li>
@@ -236,6 +244,12 @@
 </div>
 <div class="section" id="what-s-new">
 <h1>What’s New<a class="headerlink" href="#what-s-new" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="potreeconverter">
+<h2>PotreeConverter<a class="headerlink" href="#potreeconverter" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>https://github.com/potree/PotreeConverter</p></li>
+</ul>
+</div>
 <div class="section" id="ajit-examples">
 <h2>Ajit examples<a class="headerlink" href="#ajit-examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="march-2022">
@@ -256,6 +270,55 @@
 </div>
 <div class="section" id="experiments">
 <h2>Experiments<a class="headerlink" href="#experiments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="viewing-data-with-the-potree-viewer">
+<h3>Viewing Data With the Potree Viewer<a class="headerlink" href="#viewing-data-with-the-potree-viewer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>general notes</p>
+<ul>
+<li><p>using prebuild containers for creating entwine trees</p></li>
+<li><p>using prebuilt container for potree viewer withpointer to localhost:8080</p></li>
+<li><p>using an ssh tunnel for 8080 so that localhost:8080 is a valid tree</p></li>
+<li><p>usgs-lidar is a REQUESTER PAYS BUCKET - its in us-west-2</p></li>
+<li><p>https://github.com/hobu/usgs-lidar/</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="https-github-com-hobu-usgs-lidar">
+<h3>https://github.com/hobu/usgs-lidar/<a class="headerlink" href="#https-github-com-hobu-usgs-lidar" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>read this first</p></li>
+<li><p>specifics conversion</p></li>
+<li></li>
+</ul>
+</div>
+</div>
+<div class="section" id="specifics-display">
+<h2>specifics display<a class="headerlink" href="#specifics-display" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cool-notes-from-readme">
+<h3>Cool Notes from Readme<a class="headerlink" href="#cool-notes-from-readme" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>https://github.com/connormanning/entwine</p></li>
+</ul>
+<p>Getting started with Entwine is easy with Docker. First, we can index some publi
+c data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">~/</span><span class="n">entwine</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">~/</span><span class="n">entwine</span><span class="p">:</span><span class="o">/</span><span class="n">entwine</span> <span class="n">connormanning</span><span class="o">/</span><span class="n">entwine</span> <span class="n">build</span> \
+    <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">entwine</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">red</span><span class="o">-</span><span class="n">rocks</span><span class="o">.</span><span class="n">laz</span> \
+    <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">entwine</span><span class="o">/</span><span class="n">red</span><span class="o">-</span><span class="n">rocks</span>
+</pre></div>
+</div>
+<p>Now we have our output at ~/entwine/red-rocks. We could have also passed a direc
+tory like -i ~/county-data/ to index multiple files. Now we can statically serve
+~/entwine with a simple HTTP server:</p>
+</div>
+<div class="section" id="http-server-don-t-forget-the-tunnel">
+<h3>Http server - don’t forget the tunnel<a class="headerlink" href="#http-server-don-t-forget-the-tunnel" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">v</span> <span class="o">~/</span><span class="n">entwine</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8080</span><span class="p">:</span><span class="mi">8080</span> <span class="n">connormanning</span><span class="o">/</span><span class="n">http</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+</div>
+<p>And view the data with Potree and Plasio.</p>
+</div>
 <div class="section" id="potree-docker-image">
 <h3>potree docker image<a class="headerlink" href="#potree-docker-image" title="Permalink to this headline">¶</a></h3>
 </div>
@@ -297,6 +360,12 @@ upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/aj
 </ul>
 </div>
 </div>
+<li><p>need a potree users guide</p></li>
+<li><p>the big viewer - not as satisfying</p>
+<ul class="simple">
+<li><p>https://usgs.entwine.io/data/view.html?r=%22https://s3-us-west-2.amazonaws.com/usgs-lidar-public/SD_Yankton_County_2012%22</p></li>
+</ul>
+</li>
 <div class="section" id="wine-version">
 <h2>wine version<a class="headerlink" href="#wine-version" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -390,11 +459,17 @@ upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/aj
 <li><p>https://medium.com/codait/nodebooks-node-js-data-science-notebooks-aa140bea21ba</p></li>
 <li><p>https://www.amazon.com/Head-First-JavaScript-Programming-Freeman/dp/144934013X/ref=as_li_ss_tl?ie=UTF8&amp;qid=1442769823&amp;sr=8-15&amp;keywords=javascript&amp;linkCode=sl1&amp;tag=nethta-20&amp;linkId=840b2a3569091af4a8106c27c814a16b</p></li>
 <li><p>https://prd-tnm.s3.amazonaws.com/LidarExplorer/index.html#/</p></li>
+<li><p>https://github.com/n-riesco/ijavascript   # javascript jupyter kernel - more study needed</p></li>
+<li><p>https://www.freecodecamp.org/news/anatomy-of-js-module-systems-and-building-libraries-fadcd8dbd0e/</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="links-first-blush">
 <h1>Links first blush<a class="headerlink" href="#links-first-blush" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>https://pdal.io/workshop/exercises/georeferencing/index.html#exercise</p></li>
+<li><p>https://www.google.com/search?channel=tus5&amp;client=firefox-b-1-d&amp;q=node+gulp+watch</p></li>
+</ul>
 <div class="section" id="formats-for-3d-pointclouds">
 <h2>formats for 3d pointclouds<a class="headerlink" href="#formats-for-3d-pointclouds" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

@@ -5,6 +5,10 @@
 
 # What's New
 
+## PotreeConverter
+
+- https://github.com/potree/PotreeConverter
+
 ## Ajit examples
 
 #### March 2022 
@@ -15,6 +19,57 @@
 	- https://github.com/tonybutzer/ajit/blob/main/experiments/3dep/notebooks/notebooks/89_ajit_data_in_s3.ipynb
 
 ## Experiments
+
+### Viewing Data With the Potree Viewer
+
+- general notes
+	- using prebuild containers for creating entwine trees		
+	- using prebuilt container for potree viewer withpointer to localhost:8080
+	- using an ssh tunnel for 8080 so that localhost:8080 is a valid tree
+	- usgs-lidar is a REQUESTER PAYS BUCKET - its in us-west-2
+	- https://github.com/hobu/usgs-lidar/  
+
+### https://github.com/hobu/usgs-lidar/
+- read this first
+
+- specifics conversion
+
+- specifics display
+	- 
+
+- need a potree users guide
+
+- the big viewer - not as satisfying
+	- https://usgs.entwine.io/data/view.html?r=%22https://s3-us-west-2.amazonaws.com/usgs-lidar-public/SD_Yankton_County_2012%22
+
+#### Cool Notes from Readme
+
+- https://github.com/connormanning/entwine
+
+Getting started with Entwine is easy with Docker. First, we can index some publi
+c data:
+
+```
+mkdir ~/entwine
+docker run -it -v ~/entwine:/entwine connormanning/entwine build \
+    -i https://data.entwine.io/red-rocks.laz \
+    -o /entwine/red-rocks
+```
+
+Now we have our output at ~/entwine/red-rocks. We could have also passed a direc
+tory like -i ~/county-data/ to index multiple files. Now we can statically serve
+ ~/entwine with a simple HTTP server:
+
+#### Http server - don't forget the tunnel
+```
+docker run -it -v ~/entwine:/var/www -p 8080:8080 connormanning/http-server
+```
+
+And view the data with Potree and Plasio.
+
+
+
+
 
 ### potree docker image
 
@@ -132,7 +187,15 @@ upload: data/ajit/HT404_1580305001_1264340300747572_1.las to s3://eccoe-lidar/aj
 
 
 - https://prd-tnm.s3.amazonaws.com/LidarExplorer/index.html#/
+
+- https://github.com/n-riesco/ijavascript   # javascript jupyter kernel - more study needed
+
+- https://www.freecodecamp.org/news/anatomy-of-js-module-systems-and-building-libraries-fadcd8dbd0e/
 # Links first blush
+
+- https://pdal.io/workshop/exercises/georeferencing/index.html#exercise
+
+- https://www.google.com/search?channel=tus5&client=firefox-b-1-d&q=node+gulp+watch
 
 ### formats for 3d pointclouds
 
