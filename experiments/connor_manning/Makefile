@@ -31,5 +31,10 @@ yankton_local:
 	-i /entwine/SD_Yankton_County_2012_001401.laz \
 	-o /entwine/yankton
 
+ajit:
+	docker run -it -v ~/data/ajit:/entwine connormanning/entwine build \
+        -i /entwine/HT404_1580305001_1264340300747572_1.las \
+        -o /entwine/lakecity
+
 
 
