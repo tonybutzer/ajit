@@ -21,9 +21,10 @@ yankton:
 	-o /entwine/yankton1
 
 drone:
-	docker run -it -v ~/entwine:/entwine connormanning/entwine build \
-	-i ~/las/2020_Drone_M.las \
+	docker run -it -v ~/data/drone:/entwine connormanning/entwine build \
+	-i entwine/2020_Drone_M.las \
 	-o /entwine/drone
+
 
 
 yankton_local:

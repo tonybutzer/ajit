@@ -19,3 +19,7 @@ docker run -it -v ~/entwine:/var/www -p 8080:8080 connormanning/http-server
 ```
 
 And view the data with Potree and Plasio.
+
+
+browser url
+- https://potree.entwine.io/data/custom.html?r=%22http://localhost:8080/lakecity/ept.json%22
