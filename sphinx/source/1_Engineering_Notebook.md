@@ -11,6 +11,10 @@
 
 ## Ajit examples
 
+# PDAL
+
+- conda install -c conda-forge pdal python-pdal gdal
+
 #### March 2022 
 
 - Exploring USGS LiDAR with STAC info
