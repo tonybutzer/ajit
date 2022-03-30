@@ -24,8 +24,9 @@ def capture_date(pdalinfo):
     return date.astimezone().isoformat()+'Z'
 
 def convertGeometry(geom, srs):
-    import ogr
-    import osr
+    #import ogr
+    #import osr
+    from osgeo import ogr, osr
     in_ref = osr.SpatialReference()
     in_ref.SetFromUserInput(srs)
     out_ref = osr.SpatialReference()
@@ -91,6 +92,8 @@ def run_stac_creator(stac_string):
     link = {'rel':'self',"href":j['filename']}
     output['links'] = [link]
 
-    sys.stdout.write(json.dumps(output,sort_keys=True,
-                      indent=2, separators=(',', ': ')))
+    #sys.stdout.write(json.dumps(output,sort_keys=True,
+                      #indent=2, separators=(',', ': ')))
+
+    return output
     # end of run_stac_creator

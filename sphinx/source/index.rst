@@ -10,6 +10,7 @@ Welcome to Using CHS AWS ECCOE to Visualize and Process LiDAR
    :maxdepth: 2
    :caption: Contents:
 
+   9_quests.md
    00define_lidar.md
    1_Engineering_Notebook.md
    10_data.md
