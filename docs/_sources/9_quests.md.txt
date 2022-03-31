@@ -6,8 +6,11 @@
 ### community and collaborators
 
 - https://twitter.com/m_schuetz
-- https://www.designsafe-ci.org/faq/
+
+
+#### lessor
 - https://agave.designsafe-ci.org/geo/v2/assets/80/8f4c3c75-a0b0-44f1-a858-e1949802cf6e/index.html
+- https://www.designsafe-ci.org/faq/
 
 ### projections
 - https://epsg.io/6428
@@ -46,6 +49,7 @@
 	- garden.geojson
 	- twins.geojson
 ### demos boulder
+- https://usgs.entwine.io/data/view.html?r=%22https://s3-us-west-2.amazonaws.com/usgs-lidar-public/CO_Eastern_ElPaso_2018%22
 - https://atlantic.tech/story-maps-data/g2-sample/G2_Sample.html
 
 ### technology tools
