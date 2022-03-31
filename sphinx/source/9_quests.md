@@ -4,6 +4,14 @@
 - garden quest
 
 ### community and collaborators
+
+- https://twitter.com/m_schuetz
+- https://www.designsafe-ci.org/faq/
+- https://agave.designsafe-ci.org/geo/v2/assets/80/8f4c3c75-a0b0-44f1-a858-e1949802cf6e/index.html
+
+### projections
+- https://epsg.io/6428
+
 ### Tutorials
 - tutorials - hobu 0- sdsc - opentopo
 ### next quests - to be sorted
@@ -38,14 +46,22 @@
 	- garden.geojson
 	- twins.geojson
 ### demos boulder
+- https://atlantic.tech/story-maps-data/g2-sample/G2_Sample.html
+
 ### technology tools
 - pdal
 - stac 
 ### issues bugs
 - potree.entwine.io sadness
 	- website is blank
+		- https://potree.entwine.io/
 	- potree viewer - lost scene capability to change from RGB - this bites.
+		- https://potree.entwine.io/data/custom.html?r=%22http://localhost:8080/garden/ept.json%22
 	- alternative is 
+		- https://ot-process2.sdsc.edu/potree/index.html?r=%22http://localhost:8080/red-rocks/ept.json%22
+		- https://ot-process2.sdsc.edu/potree/index.html?r=%22https://ot-process2.sdsc.edu/sampleBoulder/pc1569530647002%22
+		- https://ot-process2.sdsc.edu/potree/index.html?r=%22http://localhost:8080/twins2/ept.json%22
+		- https://ot-process2.sdsc.edu/potree/index.html?r=%22http://localhost:8080/garden/ept.json%22
 - vpn sadness
 - network sadness
 - folium sadness
