@@ -1,6 +1,6 @@
 # Quests
 
-## Garden of the Gods
+## Garden of the Gods v2
 - garden quest
 
 ### community and collaborators
