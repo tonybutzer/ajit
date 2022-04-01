@@ -1,5 +1,13 @@
 # Quests
 
+## In Pictures
+
+![](./Assets/garden-siamese-2.JPG)
+![](./Assets/lidar-sdsc-viewer-garden.JPG)
+![](./Assets/quest-lidar-potree-siamese.JPG)
+![](./Assets/siamese-twins-garden-google-maps-pic.JPG)
+
+
 ## Garden of the Gods v2
 - garden quest
 
