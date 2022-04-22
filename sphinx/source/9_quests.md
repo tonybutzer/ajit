@@ -1,5 +1,41 @@
 # Quests
 
+## Mahesh Cloud Training
+
+### Lesson 1 bigPangeo Persistent Conda
+
+- use older pangeo to create ome directory environments - ~/my_condas
+- build maheshv2 env and use mamba from txt file
+    - create pangeo_modules.txt from yml file
+
+### Lesson 2 Custom CHS Pesonal Pangeo Cloud Computer ec2 instance
+
+- bash shell
+- maheshv1 conda env 
+- conda vs. pip - # use conda if you can
+- git repos
+	- ajit
+	- personal pangeo
+	- https://github.com/tonybutzer/ajit
+	- https://github.com/tonybutzer/personal-pangeo
+
+#### Exercises for Mahesh
+- learn git and have a few repos
+- learn enuf linux - bash, vi, ls, basic linux commands
+- learn docker
+- improve python skills
+- run a prototype project in the cloud with s3
+- learn s3
+- learn ec2
+- get console access - find Jacob Charles
+
+### Lesson 2a - EC2
+- start instances 
+- stop instances
+- cost instances
+- aws s3 ls
+- starting pangeo - jupyter notebook server - start stop maintain - nuances
+
 ## In Pictures
 
 ![](./Assets/garden-siamese-2.JPG)
