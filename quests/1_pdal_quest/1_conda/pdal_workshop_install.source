@@ -1,0 +1,5 @@
+
+conda create --name pdal_quest
+conda activate pdal_quest
+conda install -y mamba
+mamba install -c conda-forge conda pdal python-pdal gdal entwine matplotlib
