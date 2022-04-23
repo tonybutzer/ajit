@@ -1,0 +1,1 @@
+pdal translate /home/ec2-user/USGS_LPC_CO_EasternColorado_2018_A18_LD31201350.laz /home/ec2-user/bigfiles/a.laz reprojection --filters.reprojection.out_srs=EPSG:4326 --writers.las.scale_x=0.0000001 --writers.las.scale_y=0.0000001 --writers.las.offset_x=auto --writers.las.offset_y=auto
