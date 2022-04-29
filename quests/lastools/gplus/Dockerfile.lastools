@@ -1,0 +1,6 @@
+from gplus
+
+workdir /home
+run apt-get update && apt-get install -y git
+run mkdir opt && \
+	(cd opt; git clone https://github.com/LAStools/LAStools.git)
