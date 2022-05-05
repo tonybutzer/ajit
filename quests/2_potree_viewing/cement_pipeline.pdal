@@ -1,0 +1,21 @@
+{
+    "pipeline": [
+        {
+"bounds": "([-10425171.940, -10423171.940], [5164494.710, 5166494.710])",
+"filename": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/IA_NorthCentral_2_2020/ept.json",
+"type": "readers.ept",
+"tag": "readdata"
+        },
+        {
+            "out_srs": "EPSG:26915",
+            "tag": "reprojectUTM",
+            "type": "filters.reprojection"
+        },
+        {
+            "filename": "simpleiowa.laz",
+            "inputs": [ "reprojectUTM" ],
+            "tag": "writerslas",
+            "type": "writers.las"
+        }
+    ]
+}

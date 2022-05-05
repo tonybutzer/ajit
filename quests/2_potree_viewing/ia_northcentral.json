@@ -1,0 +1,17 @@
+
+{
+    "pipeline": [
+        {
+            "type": "readers.ept",
+            "filename":"ept://https://s3-us-west-2.amazonaws.com/usgs-lidar-public/IA_NorthCentral_2_2020/ept.json"
+        },
+        {
+            "type": "writers.las",
+            "compression": "true",
+            "minor_version": "2",
+            "dataformat_id": "0",
+            "filename":"ia_nc.laz"
+        }
+    ]
+}
+
