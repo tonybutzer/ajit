@@ -1,5 +1,4 @@
--r--r--r-- 1 ec2-user ec2-user 33M Apr 29 21:30 ./.git/objects/pack/pack-59dae22e665b9453bdcc299a58e10d8f4ef9cf6f.pack
+-r--r--r-- 1 ec2-user ec2-user 33M May  5 02:30 ./.git/objects/pack/pack-59dae22e665b9453bdcc299a58e10d8f4ef9cf6f.pack
 -r--r--r-- 1 ec2-user ec2-user 54M Apr 23 15:28 ./.git/objects/a3/14c8675068ccb3ea2bc1b975925bc63193f915
 -r--r--r-- 1 ec2-user ec2-user 54M Apr 29 21:31 ./.git/objects/e1/ef385f8adbf960b318cd79e331d2153125c346
--rw-rw-r-- 1 ec2-user ec2-user 7.2M Apr 22 17:25 ./0_notebooks_training/.tmp.txt
 -rw-rw-r-- 1 ec2-user ec2-user 7.1M Apr 22 17:25 ./0_notebooks_training/90_intro_to_eccoe_chs_cloud.ipynb
