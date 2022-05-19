@@ -4,6 +4,7 @@ cat:
 	cat Makefile
 
 
+
 build:
 	docker build -t ${Image} .
 
@@ -15,3 +16,6 @@ run:
 view:
 	docker run -v /home/ec2-user/bigfiles:/media -p443:443 ${Image}
 
+
+ia:
+	docker run -v /home/ec2-user/ia:/potree/Potree/pointclouds -p443:443 ${Image}

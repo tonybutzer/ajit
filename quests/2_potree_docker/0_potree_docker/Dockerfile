@@ -57,5 +57,7 @@ RUN git clone -b develop https://github.com/potree/Potree.git \
 EXPOSE 443
 
 WORKDIR ${POTREE_ROOT}
+RUN mkdir -p data
+COPY data/custom.html data/
 CMD ["gulp","watch"]
 
